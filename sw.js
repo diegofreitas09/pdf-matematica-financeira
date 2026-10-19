@@ -1,5 +1,5 @@
-const CACHE='pdf-financeira-aurora-v6';
-const ASSETS=['./','./index.html','./style.css','./script.js','./plataforma.html','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
+const CACHE='pdf-financeira-aurora-v8';
+const ASSETS=['./','./index.html','./style.css','./script.js','./plataforma.html','./financeiro.html','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting()));
 });

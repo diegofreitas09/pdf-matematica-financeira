@@ -8,6 +8,7 @@ const worlds = [
   { id: 2, title: 'Guardião do Domínio', topic: 'Domínio', firstId: 28, count: 14 },
   { id: 3, title: 'Laboratório Algébrico', topic: 'Propriedades', firstId: 42, count: 10 }
 ];
+const THEME_STORAGE_KEY = 'pdf-financeira-theme';
 
 const $ = (selector, root = document) => root.querySelector(selector);
 const userState = {
@@ -21,6 +22,39 @@ const userState = {
 let frameReady = false;
 let pendingDestination = null;
 let lastTrigger = null;
+
+
+function getThemePreference() {
+  try {
+    return localStorage.getItem(THEME_STORAGE_KEY) || document.documentElement.getAttribute('data-theme') || 'dark';
+  } catch (error) {
+    return document.documentElement.getAttribute('data-theme') || 'dark';
+  }
+}
+
+function updateThemeToggle(theme) {
+  const button = $('#theme-toggle');
+  if (!button) return;
+  const isLight = theme === 'light';
+  button.setAttribute('aria-pressed', String(isLight));
+  button.setAttribute('aria-label', isLight ? 'Alternar para modo noite' : 'Alternar para modo dia');
+  $('.theme-toggle-icon', button).textContent = isLight ? '☀️' : '🌙';
+  $('.theme-toggle-label', button).textContent = isLight ? 'Modo dia' : 'Modo noite';
+}
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  try { localStorage.setItem(THEME_STORAGE_KEY, theme); } catch (error) {}
+  updateThemeToggle(theme);
+  const frame = $('#legacy-frame');
+  if (frame && frame.contentDocument) {
+    applyAuroraSkin(frame.contentDocument, theme);
+  }
+}
+
+function toggleTheme() {
+  applyTheme(getThemePreference() === 'light' ? 'dark' : 'light');
+}
 
 function getSavedState() {
   try {
@@ -130,30 +164,57 @@ function showMissingAppMessage() {
   $('#legacy-frame').hidden = true;
 }
 
-function applyAuroraSkin(doc) {
-  if ($('#aurora-skin', doc)) return;
-  const style = doc.createElement('style');
-  style.id = 'aurora-skin';
+function applyAuroraSkin(doc, theme = getThemePreference()) {
+  const palette = theme === 'light'
+    ? {
+        bg: '#eef4ff', bg2: '#f8fbff', card: 'rgba(255,255,255,.86)', card2: '#ffffff', edge: 'rgba(24,46,88,.12)',
+        text: '#1f2b3d', muted: '#53627a', mint: '#0c7ecf', gold: '#c99300', coral: '#db6262', blue: '#0c7ecf', accent: '#f3f7ff'
+      }
+    : {
+        bg: '#0f0c29', bg2: '#24243e', card: 'rgba(255,255,255,.06)', card2: '#211e43', edge: 'rgba(255,255,255,.15)',
+        text: '#ffffff', muted: '#c7c2dc', mint: '#00f2fe', gold: '#ffd700', coral: '#ff6b6b', blue: '#00f2fe', accent: '#29254e'
+      };
+
+  let style = $('#aurora-skin', doc);
+  if (!style) {
+    style = doc.createElement('style');
+    style.id = 'aurora-skin';
+    doc.head.appendChild(style);
+    const fonts = doc.createElement('link');
+    fonts.rel = 'stylesheet';
+    fonts.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap';
+    doc.head.appendChild(fonts);
+  }
+
   style.textContent = `
-    :root { --bg:#0f0c29; --card:#211e43; --card2:#2d2857; --edge:#554f83;
-      --text:#fff; --muted:#c7c2dc; --mint:#00f2fe; --gold:#ffd700; --pink:#ff6b6b; --blue:#00f2fe; }
-    body { color:var(--text); background:linear-gradient(140deg,#0f0c29,#302b63 78%,#24243e); font-family:Inter,system-ui,sans-serif; }
-    h1,h2,h3,.brand { font-family:'Space Grotesk',Inter,sans-serif; }
-    .hero,.lessonPaper { background:linear-gradient(115deg,#24214e,#181735); border-color:#57508a; }
-    .panel,.mission,.stat { background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.15); }
-    .primary { background:linear-gradient(110deg,#ffd700,#ffb766); color:#18132f; }
-    .nav button.active,.stat strong,.money { color:#00f2fe; }
-    .study-alert,.error-card { color:#fff; background:#29254e; border-color:#5a528a; }
-    .study-alert p,.error-card p { color:#c7c2dc; }
-    .feedback,.teach { background:#29254e; color:#fff; }
-    .answer.correct { border-color:#00f2fe; background:#164a51; }
-    a { color:inherit; } button:focus-visible,input:focus-visible,select:focus-visible { outline:3px solid #00f2fe; outline-offset:3px; }
+    :root { --bg:${palette.bg}; --card:${palette.card}; --card2:${palette.card2}; --edge:${palette.edge}; --text:${palette.text}; --muted:${palette.muted}; --mint:${palette.mint}; --gold:${palette.gold}; --pink:${palette.coral}; --blue:${palette.blue}; }
+    html { color-scheme: ${theme}; }
+    body { color:var(--text)!important; background:${theme === 'light' ? 'linear-gradient(180deg,#eef4ff,#f8fbff)' : 'linear-gradient(140deg,#0f0c29,#302b63 78%,#24243e)'}!important; font-family:Inter,system-ui,sans-serif!important; }
+    h1,h2,h3,.brand,.money,.sectiontitle { color:var(--text)!important; font-family:'Space Grotesk',Inter,sans-serif!important; }
+    p,small,label,li,span,td,th,div,strong,b { color: inherit; }
+    .muted, .study-alert p, .error-card p, .feedback p, .teach p, footer, .source, .pill, .world-index { color:var(--muted)!important; }
+    .chip,.pill,.study-alert,.error-card,.feedback,.teach,.panel,.mission,.stat,.lessonPaper,.bookBody,.hero,.sim-card,.card,table,.formula,.example,blockquote { background:${palette.card}!important; color:var(--text)!important; border-color:var(--edge)!important; }
+    .hero,.lessonPaper,.bookBody { background:${theme === 'light' ? '#ffffff' : 'linear-gradient(115deg,#24214e,#181735)'}!important; }
+    .top,.nav,.quick-panel,.stage-toolbar,.toolbar { background:${theme === 'light' ? 'rgba(255,255,255,.75)' : 'transparent'}!important; }
+    .nav button,.secondary,.lessonTabs button,.answer,input,select,textarea { background:${theme === 'light' ? '#ffffff' : '#2d2857'}!important; color:var(--text)!important; border-color:var(--edge)!important; }
+    .nav button.active,.lessonTabs button.active,.stat strong,.money,.pill.gold,.tag,.sectiontitle em { color:var(--mint)!important; }
+    .primary { background:linear-gradient(110deg,${palette.gold},#ffb766)!important; color:${theme === 'light' ? '#162033' : '#18132f'}!important; border:0!important; }
+    .answer.correct { border-color:var(--mint)!important; background:${theme === 'light' ? '#dff6ff' : '#164a51'}!important; }
+    .answer.wrong { border-color:${palette.coral}!important; background:${theme === 'light' ? '#ffe7e7' : '#442637'}!important; }
+    .bar, .progress-track { background:${theme === 'light' ? 'rgba(12,126,207,.12)' : 'rgba(255,255,255,.12)'}!important; }
+    .bar span, .progress-track span { background:linear-gradient(90deg,${palette.mint},${palette.gold})!important; }
+    table, .sim-table, .table, .bookTable { width:100%; border-collapse:collapse; overflow:hidden; border-radius:16px; }
+    th, td { color:var(--text)!important; border-bottom:1px solid ${theme === 'light' ? 'rgba(24,46,88,.12)' : 'rgba(255,255,255,.12)'}!important; background:transparent!important; }
+    th { background:${theme === 'light' ? '#f2f7ff' : 'rgba(255,255,255,.04)'}!important; }
+    canvas { background: ${theme === 'light' ? '#ffffff' : 'transparent'}; border-radius:16px; }
+    svg text, .chart text { fill: ${palette.text}!important; color: ${palette.text}!important; }
+    a { color:${palette.mint}!important; }
+    button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible { outline:3px solid ${palette.mint}!important; outline-offset:3px!important; }
+    .question { color:var(--text)!important; }
+    .log { color:var(--muted)!important; border-color:var(--edge)!important; }
   `;
-  doc.head.appendChild(style);
-  const fonts = doc.createElement('link');
-  fonts.rel = 'stylesheet';
-  fonts.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap';
-  doc.head.appendChild(fonts);
+
+  doc.documentElement.setAttribute('data-theme', theme);
 }
 
 function launchDestination() {
@@ -215,7 +276,9 @@ function closeStage() {
 }
 
 function init() {
+  applyTheme(getThemePreference());
   syncUserState();
+  $('#theme-toggle')?.addEventListener('click', toggleTheme);
   $('#stage-close').addEventListener('click', closeStage);
   $('#legacy-frame').addEventListener('load', () => {
     try {
@@ -257,12 +320,5 @@ function init() {
   });
 }
 
-// Atualizações offline; carregamento não bloqueia a primeira pintura.
-if ('serviceWorker' in navigator && location.protocol === 'https:') {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js').catch(error => {
-      console.warn('Modo offline indisponível:', error);
-    });
-  }, { once: true });
-}
 document.addEventListener('DOMContentLoaded', init, { once: true });
+if ('serviceWorker' in navigator && location.protocol==='https:') window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(console.warn),{once:true});

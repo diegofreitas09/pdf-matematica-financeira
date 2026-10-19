@@ -7,6 +7,18 @@
   <meta name="description" content="PDF Matemática Financeira: aprenda logaritmos e juros com 110 desafios, missões, simulados e acompanhamento de progresso.">
   <meta name="color-scheme" content="dark">
   <title>PDF Matemática Financeira | Sua jornada começa aqui</title>
+  <meta name="description" content="Trilha gamificada de logaritmos e matemática financeira com calculadoras, financiamento, amortização e simulados.">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('pdf-financeira-theme');
+        var theme = saved || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    }());
+  </script>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,12 +38,16 @@
         </a>
         <nav class="nav-links" aria-label="Navegação principal">
           <a class="nav-link" href="#trilha">Trilha</a>
-          <button class="nav-link" type="button" data-route="simulador">Laboratório</button>
+          <a class="nav-link" href="./financeiro.html">Financeiro PRO</a>
           <button class="nav-link" type="button" data-route="arena">Arena</button>
         </nav>
         <div class="nav-stats" aria-label="Seu desempenho">
           <span class="stat-chip" title="Dias consecutivos estudando"><span aria-hidden="true">🔥</span> <strong id="streak-value">0</strong><span class="chip-label"> dias</span></span>
           <span class="stat-chip xp-chip" title="Pontos de experiência"><span aria-hidden="true">⚡</span> <strong id="xp-value">0</strong><span class="chip-label"> XP</span></span>
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Alternar para modo dia" aria-pressed="false">
+            <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+            <span class="theme-toggle-label">Modo noite</span>
+          </button>
         </div>
       </div>
     </header>
@@ -111,6 +127,7 @@
       <section class="quick-section container" aria-labelledby="shortcuts-title">
         <div class="section-heading"><div><p class="eyebrow">APRENDA DO SEU JEITO</p><h2 id="shortcuts-title">Escolha sua próxima missão</h2></div></div>
         <div class="quick-grid">
+          <a class="quick-card" href="./financeiro.html"><span class="quick-icon" aria-hidden="true">R$</span><span><strong>Central Financeira PRO</strong><small>Calculadoras, financiamento, Price, SAC e amortização antecipada.</small></span><span class="quick-arrow" aria-hidden="true">→</span></a>
           <button class="quick-card" type="button" data-route="simulador"><span class="quick-icon" aria-hidden="true">↗</span><span><strong>Laboratório financeiro</strong><small>Simule juros compostos e metas de investimento.</small></span><span class="quick-arrow" aria-hidden="true">→</span></button>
           <button class="quick-card" type="button" data-route="arena"><span class="quick-icon" aria-hidden="true">★</span><span><strong>Arena de simulados</strong><small>Treine nos formatos ENEM, UECE e concursos.</small></span><span class="quick-arrow" aria-hidden="true">→</span></button>
           <button class="quick-card" type="button" data-route="biblioteca"><span class="quick-icon" aria-hidden="true">#</span><span><strong>Biblioteca de questões</strong><small>Consulte por ID, imprima ou exporte.</small></span><span class="quick-arrow" aria-hidden="true">→</span></button>
