@@ -1,5 +1,5 @@
-const CACHE='pdf-financeira-aurora-v8';
-const ASSETS=['./','./index.html','./style.css','./script.js','./plataforma.html','./financeiro.html','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
+const CACHE='pdf-financeira-aurora-v9';
+const ASSETS=['./','./index.html','./style.css','./script.js','./plataforma.html','./financeiro.html','./experience.js','./experience.css','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting()));
 });
@@ -20,3 +20,5 @@ self.addEventListener('fetch',event=>{
     }
   })());
 });
+
+self.addEventListener("notificationclick",event=>{event.notification.close();const url=new URL(event.notification.data?.url||"./?revisar=1",self.registration.scope).href;event.waitUntil(clients.matchAll({type:"window",includeUncontrolled:true}).then(all=>{const active=all.find(c=>c.url.startsWith(self.registration.scope));return active?active.navigate(url).then(()=>active.focus()):clients.openWindow(url);}));});
