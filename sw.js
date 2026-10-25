@@ -1,7 +1,7 @@
 /* PDF Financeira — cache versionado, navegação offline correta e atualização segura. */
-const CACHE='pdf-financeira-aurora-v13';
+const CACHE='pdf-financeira-aurora-v14';
 const PREFIX='pdf-financeira-';
-const ASSETS=['./','./index.html','./style.css','./script.js','./plataforma.html','./financeiro.html','./uece-financeira.html','./experience.js','./install.js','./experience.css','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
+const ASSETS=['./','./index.html','./style.css','./script.js','./plataforma.html','./financeiro.html','./uece-financeira.html','./experience.js','./install.js','./study-reminders.html','./study-reminders.js','./experience.css','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting()));
 });
