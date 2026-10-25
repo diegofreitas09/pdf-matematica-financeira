@@ -24,7 +24,7 @@
   };
   const detail = (value, mode) => {
     const fr=fraction(value);
-    return (fr && fr!==String(value) ? ' = '+fr : '') + (mode==='rad' ? ' · RAD' : ' · DEG');
+    return (fr && fr!==String(value) ? ' = '+fr : '') + (mode==='rad' ? ' · RAD' : mode==='deg' ? ' · DEG' : ' · modo angular não registrado');
   };
   const fmt = value => new Intl.NumberFormat('pt-BR',{maximumFractionDigits:10}).format(value);
   const evaluate = () => evalSafe(input.value,document.getElementById('angle').value);
@@ -42,9 +42,9 @@
     for(const item of records) {
       const button = document.createElement('button');
       button.type = 'button';
-      button.textContent = item.expr + ' = ' + fmt(item.value) + detail(item.value,item.angle||'deg');
+      button.textContent = item.expr + ' = ' + fmt(item.value) + detail(item.value,item.angle);
       button.title = 'Reutilizar expressão';
-      button.onclick = () => { input.value = item.expr; document.getElementById('angle').value=item.angle||'deg';input.focus(); showPreview(); };
+      button.onclick = () => { input.value = item.expr; if(item.angle)document.getElementById('angle').value=item.angle;input.focus(); showPreview(); };
       list.append(button);
     }
     document.getElementById('calculator-memory-indicator').textContent = 'Memória: ' + fmt(memory);
