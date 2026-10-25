@@ -1,24 +1,40 @@
-const CACHE='pdf-financeira-aurora-v9';
+/* PDF Financeira — cache versionado, navegação offline correta e atualização segura. */
+const CACHE='pdf-financeira-aurora-v10';
+const PREFIX='pdf-financeira-';
 const ASSETS=['./','./index.html','./style.css','./script.js','./plataforma.html','./financeiro.html','./experience.js','./experience.css','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting()));
 });
 self.addEventListener('activate',event=>{
-  event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('pdf-financeira-')&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim()));
+  event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith(PREFIX)&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim()));
 });
 self.addEventListener('fetch',event=>{
-  if(event.request.method!=='GET'||new URL(event.request.url).origin!==self.location.origin)return;
+  const request=event.request;
+  if(request.method!=='GET'||new URL(request.url).origin!==self.location.origin)return;
   event.respondWith((async()=>{
     const cache=await caches.open(CACHE);
+    const url=new URL(request.url);
+    const isPage=request.mode==='navigate'||url.pathname.endsWith('.html')||url.pathname.endsWith('/');
+    const cached=await cache.match(request,{ignoreSearch:true});
+    // Páginas usam rede primeiro para receber correções; recursos estáticos, cache primeiro.
+    if(!isPage&&cached)return cached;
     try{
-      const response=await fetch(event.request);
-      if(response.ok)cache.put(event.request,response.clone()).catch(()=>{});
+      const response=await fetch(request);
+      if(response.ok)cache.put(request,response.clone()).catch(()=>{});
       return response;
     }catch(error){
-      return (await cache.match(event.request,{ignoreSearch:true}))
-        || (event.request.mode==='navigate'?await cache.match('./index.html'):Response.error());
+      if(cached)return cached;
+      // Não mostrar a tela inicial no lugar de uma calculadora ou aula offline.
+      if(isPage)return new Response('<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Sem conexão — PDF Matemática Financeira</title><body style="font:16px system-ui;padding:2rem;line-height:1.6"><h1>Você está sem conexão</h1><p>Esta página ainda não foi salva para uso offline. Reconecte-se e abra novamente.</p><button onclick="location.reload()">Tentar novamente</button></body></html>',{status:503,headers:{'Content-Type':'text/html; charset=utf-8'}});
+      return Response.error();
     }
   })());
 });
-
-self.addEventListener("notificationclick",event=>{event.notification.close();const url=new URL(event.notification.data?.url||"./?revisar=1",self.registration.scope).href;event.waitUntil(clients.matchAll({type:"window",includeUncontrolled:true}).then(all=>{const active=all.find(c=>c.url.startsWith(self.registration.scope));return active?active.navigate(url).then(()=>active.focus()):clients.openWindow(url);}));});
+self.addEventListener('notificationclick',event=>{
+  event.notification.close();
+  const url=new URL(event.notification.data?.url||'./?revisar=1',self.registration.scope).href;
+  event.waitUntil(clients.matchAll({type:'window',includeUncontrolled:true}).then(all=>{
+    const active=all.find(c=>c.url.startsWith(self.registration.scope));
+    return active?active.navigate(url).then(()=>active.focus()):clients.openWindow(url);
+  }));
+});
