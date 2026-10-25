@@ -1,5 +1,5 @@
 /* PDF Financeira — cache versionado, navegação offline correta e atualização segura. */
-const CACHE='pdf-financeira-aurora-v16';
+const CACHE='pdf-financeira-aurora-v17';
 const PREFIX='pdf-financeira-';
 const ASSETS=['./','./index.html','./style.css','./script.js','./plataforma.html','./financeiro.html','./calculator-pro.js','./uece-financeira.html','./experience.js','./install.js','./study-reminders.html','./study-reminders.js','./experience.css','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',event=>{
