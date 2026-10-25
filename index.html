@@ -4,6 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0F0C29">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="PDF Financeira">
+  <link rel="apple-touch-icon" href="icon-192.png">
   <meta name="description" content="PDF Matemática Financeira: aprenda logaritmos e juros com 110 desafios, missões, simulados e acompanhamento de progresso.">
   <meta name="color-scheme" content="dark">
   <title>PDF Matemática Financeira | Sua jornada começa aqui</title>
@@ -27,6 +31,13 @@
   <link rel="stylesheet" href="experience.css">
   <script src="script.js" defer></script>
   <script src="experience.js" defer></script>
+  <script src="install.js" defer></script>
+  <style>
+    .install-banner{margin:24px auto;max-width:1180px;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;background:linear-gradient(110deg,#173754,#25325c);border:1px solid #539ed1;border-radius:20px;color:#fff;box-shadow:0 8px 30px #0002}
+    .install-banner h2{font-size:clamp(1.1rem,3vw,1.45rem);margin:0 0 5px;color:#fff}.install-banner p{margin:0;color:#e1eeff}.install-launch{min-height:48px;border:1px solid #82defc;border-radius:12px;padding:10px 19px;background:#097ea9;color:white;font-weight:800;cursor:pointer}
+    .install-launch:focus-visible,.install-close:focus-visible{outline:3px solid #5ce4ff;outline-offset:3px}
+    .install-dialog{width:min(540px,calc(100% - 30px));border:1px solid #8290b7;border-radius:20px;background:#182440;color:#f7fbff;padding:26px;box-shadow:0 24px 80px #0009}.install-dialog::backdrop{background:rgba(2,7,24,.8)}.install-dialog h2{margin:0 0 10px;color:#fff}.install-dialog p,.install-dialog li{color:#e3eafd;line-height:1.65}.install-dialog a{color:#76e8ff}.install-dialog button{cursor:pointer}.install-close{float:right;background:#2d4068;color:#fff;border:1px solid #7a8da8;border-radius:10px;padding:6px 12px}.install-platforms{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.install-platforms button{border:1px solid #7d9abd;background:#233c61;color:#fff;border-radius:12px;padding:10px 15px;min-height:45px}.install-platforms button[aria-pressed="true"]{background:#086e99;border-color:#78dfff}.install-guide{border:1px solid #526782;border-radius:12px;padding:14px;background:#14203a}.install-guide ol{padding-left:23px}.install-guide li{margin-bottom:8px}.install-guide [hidden]{display:none!important}@media(max-width:650px){.install-banner{margin:12px;padding:17px}.install-launch{width:100%}}
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -59,6 +70,7 @@
           <p class="eyebrow"><span class="online-dot" aria-hidden="true"></span> PREPARATÓRIO DIEGO FREITAS · TEMPORADA 01</p>
           <h1 id="hero-title">Domine <span class="gradient-text">Logaritmos.</span><br>Conquiste o <span class="gradient-text">Futuro.</span></h1>
           <p class="hero-description">Transforme cada questão em uma conquista. Avance pelos mundos, aprenda com seus erros e use a matemática para dominar o dinheiro.</p>
+          <div class="install-banner" aria-label="Instale o aplicativo no celular"><div><h2>📲 Leve a PDF Financeira no bolso</h2><p>Instale no Android ou iPhone e estude pelo ícone na tela inicial.</p></div><button type="button" class="install-launch" data-open-install>Instalar aplicativo</button></div>
           <div class="hero-actions">
             <a href="#trilha" class="button button-primary">Começar Jornada <span aria-hidden="true">→</span></a>
             <button class="button button-outline" type="button" data-route="caderno">Meu caderno de erros</button>
@@ -141,6 +153,27 @@
     <footer class="site-footer container"><span>© 2026 PDF — Preparatório Diego Freitas</span><span>Matemática que evolui com você.</span></footer>
   </div>
 
+  <dialog class="install-dialog" id="install-dialog" aria-labelledby="install-title">
+    <button type="button" class="install-close" id="install-close" aria-label="Fechar instruções de instalação">✕</button>
+    <h2 id="install-title">Instalar PDF Matemática Financeira</h2>
+    <p>Escolha seu celular. É gratuito e não precisa baixar um APK.</p>
+    <div class="install-platforms" role="group" aria-label="Sistema do seu celular">
+      <button type="button" data-install-platform="android" aria-pressed="false">🤖 Android</button>
+      <button type="button" data-install-platform="ios" aria-pressed="false"> iPhone / iPad</button>
+    </div>
+    <div class="install-guide">
+      <div id="install-android" hidden><strong>Android · Google Chrome</strong>
+        <ol><li>Abra este site no Chrome do celular.</li><li>Toque em <strong>Instalar aplicativo</strong> abaixo, quando disponível. Senão, abra o menu <strong>⋮</strong> e escolha <strong>Instalar app</strong> ou <strong>Adicionar à tela inicial</strong>.</li><li>Confirme a instalação. O ícone da PDF Financeira aparecerá no celular.</li></ol>
+        <button type="button" class="install-launch" id="install-native" hidden>Instalar agora</button>
+      </div>
+      <div id="install-ios" hidden><strong>iPhone / iPad · Safari</strong>
+        <ol><li>Abra este link no <strong>Safari</strong>.</li><li>Toque em <strong>Compartilhar</strong> (quadrado com seta para cima) ou abra o menu de ações da página.</li><li>Escolha <strong>Adicionar à Tela de Início</strong> e confirme em <strong>Adicionar</strong>.</li></ol>
+        <p>O iOS não permite iniciar esta instalação automaticamente por um botão do site.</p>
+      </div>
+      <p id="install-installed" hidden>✅ Este aplicativo já está aberto como um app instalado.</p>
+    </div>
+    <p id="install-info" role="status" aria-live="polite"></p>
+  </dialog>
   <!-- A plataforma anterior é carregada somente quando o aluno abre uma atividade. -->
   <section class="game-stage" id="game-stage" role="dialog" aria-modal="true" aria-labelledby="stage-title" hidden>
     <div class="stage-toolbar">
