@@ -14,9 +14,9 @@
 .pdf-voice-copy h2{font-size:clamp(1.2rem,2.5vw,1.5rem);line-height:1.25;margin:0 0 8px;color:#fff}
 .pdf-voice-copy>p{margin:0 0 12px;color:#e9dbf8;font-size:.92rem;line-height:1.45}
 .pdf-voice-form{display:flex;align-items:stretch;gap:9px;flex-wrap:wrap}
-.pdf-voice-input{min-width:0;flex:1 1 160px;min-height:46px;max-width:360px;padding:11px 14px;border:1px solid rgba(199,154,245,.74);border-radius:12px;background:rgba(18,13,42,.68);color:#fff;font:600 1rem inherit}
+.pdf-voice-input{min-width:0;flex:1 1 160px;min-height:46px;max-width:360px;padding:11px 14px;border:1px solid rgba(199,154,245,.74);border-radius:12px;background:rgba(18,13,42,.68);color:#fff;font-family:inherit;font-size:1rem;font-weight:600}
 .pdf-voice-input::placeholder{color:#d8c2e8;opacity:1}
-.pdf-voice-submit{min-height:46px;padding:11px 18px;border:1px solid #c996ff;border-radius:12px;background:#820ad1;color:#fff;font:700 .94rem inherit;cursor:pointer;transition:background .2s}
+.pdf-voice-submit{min-height:46px;padding:11px 18px;border:1px solid #c996ff;border-radius:12px;background:#820ad1;color:#fff;font-family:inherit;font-size:.94rem;font-weight:700;cursor:pointer;transition:background .2s}
 .pdf-voice-submit:hover{background:#9d36eb}
 .pdf-voice-status{min-height:1.35em;margin:9px 0 0!important;color:#f1dcff!important;font-size:.85rem!important}
 .pdf-voice-status[data-kind="error"]{color:#ffd0da!important}
