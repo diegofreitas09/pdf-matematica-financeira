@@ -1,7 +1,7 @@
 /* PDF Financeira — cache versionado, navegação offline correta e atualização segura. */
-const CACHE='pdf-financeira-aurora-v18';
+const CACHE='pdf-financeira-aurora-v19';
 const PREFIX='pdf-financeira-';
-const ASSETS=['./','./index.html','./style.css','./script.js','./plataforma.html','./financeiro.html','./calculator-pro.js','./uece-financeira.html','./experience.js','./install.js','./study-reminders.html','./study-reminders.js','./experience.css','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
+const ASSETS=['./','./index.html','./style.css','./script.js','./plataforma.html','./financeiro.html','./calculator-pro.js','./uece-financeira.html','./experience.js','./install.js','./study-reminders.html','./study-reminders.js','./experience.css','./revisao-avaliacao.html','./revisao-avaliacao.css','./revisao-avaliacao.js','./revisao-avaliacao.json','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting()));
 });
@@ -17,7 +17,8 @@ self.addEventListener('fetch',event=>{
     const isPage=request.mode==='navigate'||url.pathname.endsWith('.html')||url.pathname.endsWith('/');
     const cached=await cache.match(request,{ignoreSearch:true});
     // Páginas usam rede primeiro para receber correções; recursos estáticos, cache primeiro.
-    if(!isPage&&cached)return cached;
+    const isReviewData=url.pathname.endsWith('/revisao-avaliacao.json');
+    if(!isPage&&!isReviewData&&cached)return cached;
     try{
       const response=await fetch(request);
       if(response.ok)cache.put(request,response.clone()).catch(()=>{});
