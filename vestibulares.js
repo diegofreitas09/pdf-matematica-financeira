@@ -71,7 +71,7 @@ function prefs(){
   events:allEvents().filter(e=>e.date>=today()&&state.selected.includes(e.id)&&e.kind!=='result').map(e=>({id:e.id,date:e.date,title:e.title,focus:e.focus})),
   sessions:state.sessions.filter(s=>s.date>=today()).map(s=>({id:s.id,title:s.title,date:s.date,time:s.time}))};
 }
-async function getSubscription(){if(!('serviceWorker' in navigator))return null;const sw=await navigator.serviceWorker.ready;return sw.pushManager?.getSubscription()||null;}
+async function getSubscription(){if(!('serviceWorker' in navigator))return null;await navigator.serviceWorker.register('./sw.js');const sw=await navigator.serviceWorker.ready;return sw.pushManager?.getSubscription()||null;}
 async function syncPush(){
  try {
   if(!('Notification' in window)||Notification.permission!=='granted')return;
