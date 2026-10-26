@@ -41,6 +41,30 @@
     .install-banner h2{font-size:clamp(1.1rem,3vw,1.45rem);margin:0 0 5px;color:#fff}.install-banner p{margin:0;color:#e1eeff}.install-launch{min-height:48px;border:1px solid #82defc;border-radius:12px;padding:10px 19px;background:#097ea9;color:white;font-weight:800;cursor:pointer}
     .install-launch:focus-visible,.install-close:focus-visible{outline:3px solid #5ce4ff;outline-offset:3px}
     .install-dialog{width:min(540px,calc(100% - 30px));border:1px solid #8290b7;border-radius:20px;background:#182440;color:#f7fbff;padding:26px;box-shadow:0 24px 80px #0009}.install-dialog::backdrop{background:rgba(2,7,24,.8)}.install-dialog h2{margin:0 0 10px;color:#fff}.install-dialog p,.install-dialog li{color:#e3eafd;line-height:1.65}.install-dialog a{color:#76e8ff}.install-dialog button{cursor:pointer}.install-close{float:right;background:#2d4068;color:#fff;border:1px solid #7a8da8;border-radius:10px;padding:6px 12px}.install-platforms{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.install-platforms button{border:1px solid #7d9abd;background:#233c61;color:#fff;border-radius:12px;padding:10px 15px;min-height:45px}.install-platforms button[aria-pressed="true"]{background:#086e99;border-color:#78dfff}.install-guide{border:1px solid #526782;border-radius:12px;padding:14px;background:#14203a}.install-guide ol{padding-left:23px}.install-guide li{margin-bottom:8px}.install-guide [hidden]{display:none!important}@media(max-width:650px){.install-banner{margin:12px;padding:17px}.install-launch{width:100%}}
+
+    /* Destaque rosa da entrada dos flashcards. */
+    .pdf-flash-entry{margin:24px 0 18px}
+    .pdf-flash-link{position:relative;isolation:isolate;display:flex;align-items:center;gap:19px;padding:21px 22px;text-decoration:none;border:1px solid #ff91c7;border-radius:23px;background:linear-gradient(112deg,#58204a 0%,#8f2466 52%,#b33377 100%);color:#fff;box-shadow:0 14px 35px rgba(236,72,153,.18);overflow:hidden;transition:transform .18s ease,box-shadow .18s ease}
+    .pdf-flash-link::after{content:"";position:absolute;z-index:-1;right:-65px;top:-85px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,#ffc4e14a,transparent 67%)}
+    .pdf-flash-link:hover{transform:translateY(-2px);box-shadow:0 18px 42px #dd35814f}
+    .pdf-flash-link:focus-visible{outline:3px solid #ffd3ec;outline-offset:4px}
+    .pdf-flash-icon{flex:none;display:grid;place-items:center;width:84px;height:91px;color:#f8abd6;border-radius:18px;background:#ffffff19;box-shadow:inset 0 0 0 1px #ffffff38;animation:pdf-flash-float 3s ease-in-out infinite}
+    .pdf-flash-icon svg{width:64px;height:64px}
+    .pdf-flash-copy{display:flex;flex-direction:column;align-items:flex-start;min-width:0;gap:5px}
+    .pdf-flash-kicker{font-size:.69rem;font-weight:900;letter-spacing:.13em;color:#ffe2f1}
+    .pdf-flash-copy>strong{font-size:clamp(1.15rem,2.45vw,1.44rem);line-height:1.25;letter-spacing:-.015em}
+    .pdf-flash-copy>span:not(.pdf-flash-kicker):not(.pdf-flash-cta){font-size:.89rem;color:#ffe7f3;line-height:1.45}
+    .pdf-flash-cta{display:inline-flex;align-items:center;gap:10px;margin-top:7px;padding:9px 13px;border-radius:11px;background:#fff0f9;color:#842254;font-size:.83rem;font-weight:900}
+    .pdf-flash-cta span{font-size:1.15rem}
+    @keyframes pdf-flash-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+    :root[data-theme="light"] .pdf-flash-link{background:linear-gradient(110deg,#ffecf6,#ffd8ec 58%,#ffc0de);color:#5a173c;border-color:#e95a9e}
+    :root[data-theme="light"] .pdf-flash-kicker{color:#aa2266}
+    :root[data-theme="light"] .pdf-flash-copy>span:not(.pdf-flash-kicker):not(.pdf-flash-cta){color:#7b375a}
+    :root[data-theme="light"] .pdf-flash-icon{background:#ffffff80;color:#d93f8f;box-shadow:inset 0 0 0 1px #e5a8c9}
+    :root[data-theme="light"] .pdf-flash-cta{background:#c7287f;color:white}
+    @media(max-width:620px){.pdf-flash-link{gap:13px;padding:18px 15px}.pdf-flash-icon{width:64px;height:75px}.pdf-flash-icon svg{width:50px;height:50px}.pdf-flash-copy>strong{font-size:1.09rem}.pdf-flash-copy>span:not(.pdf-flash-kicker):not(.pdf-flash-cta){font-size:.81rem}.pdf-flash-kicker{font-size:.61rem}}
+    @media(prefers-reduced-motion:reduce){.pdf-flash-icon{animation:none}.pdf-flash-link{transition:none}}
+
   </style>
 </head>
 <body>
@@ -74,6 +98,20 @@
           <p class="eyebrow"><span class="online-dot" aria-hidden="true"></span> PREPARATÓRIO DIEGO FREITAS · TEMPORADA 01</p>
           <h1 id="hero-title">Domine <span class="gradient-text">Logaritmos.</span><br>Conquiste o <span class="gradient-text">Futuro.</span></h1>
           <p class="hero-description">Transforme cada questão em uma conquista. Avance pelos mundos, aprenda com seus erros e use a matemática para dominar o dinheiro.</p>
+
+          <section class="pdf-flash-entry" aria-label="Flashcards de Matemática Financeira">
+            <a class="pdf-flash-link" href="./flashcards.html" aria-label="Abrir flashcards de Matemática Financeira">
+              <span class="pdf-flash-icon" aria-hidden="true">
+                <svg viewBox="0 0 64 64" width="66" height="66" fill="none"><rect x="18" y="8" width="35" height="43" rx="6" stroke="currentColor" stroke-width="3" opacity=".6" transform="rotate(10 18 8)"></rect><rect x="10" y="13" width="39" height="45" rx="7" fill="#FFF0F8" stroke="currentColor" stroke-width="3"></rect><path d="M22 30c.4-6 15-7 15 1 0 5-7 5-7 10" stroke="#C6297E" stroke-width="3.5" stroke-linecap="round"></path><circle cx="30" cy="47" r="2.5" fill="#C6297E"></circle></svg>
+              </span>
+              <span class="pdf-flash-copy">
+                <span class="pdf-flash-kicker">✦ NOVO · REVISÃO INTERATIVA</span>
+                <strong>Flashcards de Matemática Financeira</strong>
+                <span>56 cartões de perguntas e respostas • 7 assuntos • aprenda e revise no seu ritmo.</span>
+                <span class="pdf-flash-cta">Abrir meus flashcards <span aria-hidden="true">→</span></span>
+              </span>
+            </a>
+          </section>
           <section class="pdf-voice-entry" id="pdf-voice-entry" aria-labelledby="pdf-voice-title">
             <button type="button" class="pdf-voice-mic" id="pdf-voice-trigger" aria-label="Dizer código da questão pelo microfone" aria-pressed="false" title="Consultar questão por voz">
               <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="2" width="6" height="13" rx="3"></rect><path d="M5 10a7 7 0 0 0 14 0M12 17v5M8 22h8"></path></svg>
@@ -172,6 +210,7 @@
       <section class="quick-section container" aria-labelledby="shortcuts-title">
         <div class="section-heading"><div><p class="eyebrow">APRENDA DO SEU JEITO</p><h2 id="shortcuts-title">Escolha sua próxima missão</h2></div></div>
         <div class="quick-grid">
+          <a class="quick-card" href="./flashcards.html"><span class="quick-icon" aria-hidden="true" style="background:#ec489924;color:#ff80bd">✦</span><span><strong>Flashcards Financeiros</strong><small>56 cartões de perguntas e respostas sobre 7 assuntos, com revisão e progresso.</small></span><span class="quick-arrow" aria-hidden="true">→</span></a>
           <a class="quick-card" href="./financeiro.html"><span class="quick-icon" aria-hidden="true">R$</span><span><strong>Central Financeira PRO</strong><small>Calculadoras, financiamento, Price, SAC e amortização antecipada.</small></span><span class="quick-arrow" aria-hidden="true">→</span></a>
           <button class="quick-card" type="button" data-route="simulador"><span class="quick-icon" aria-hidden="true">↗</span><span><strong>Laboratório financeiro</strong><small>Simule juros compostos e metas de investimento.</small></span><span class="quick-arrow" aria-hidden="true">→</span></button>
           <button class="quick-card" type="button" data-route="biblioteca"><span class="quick-icon" aria-hidden="true">📄</span><span><strong>Desafios em PDF</strong><small>Baixe os exercícios organizados por assunto e nível. PDF com ou sem gabarito.</small></span><span class="quick-arrow" aria-hidden="true">→</span></button>
