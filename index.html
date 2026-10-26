@@ -65,6 +65,24 @@
     @media(max-width:620px){.pdf-flash-link{gap:13px;padding:18px 15px}.pdf-flash-icon{width:64px;height:75px}.pdf-flash-icon svg{width:50px;height:50px}.pdf-flash-copy>strong{font-size:1.09rem}.pdf-flash-copy>span:not(.pdf-flash-kicker):not(.pdf-flash-cta){font-size:.81rem}.pdf-flash-kicker{font-size:.61rem}}
     @media(prefers-reduced-motion:reduce){.pdf-flash-icon{animation:none}.pdf-flash-link{transition:none}}
 
+
+    .pdf-exam-entry{margin:23px 0 16px}
+    .pdf-exam-entry-link{display:flex;align-items:center;gap:16px;padding:20px 22px;border:1px solid #ffc078a3;border-radius:21px;background:linear-gradient(118deg,#413453,#503351 52%,#6b3e48);color:#fff;text-decoration:none;box-shadow:0 12px 34px #eeab7023;transition:transform .2s,box-shadow .2s}
+    .pdf-exam-entry-link:hover{transform:translateY(-2px);box-shadow:0 15px 42px #ed9a4840}
+    .pdf-exam-entry-link:focus-visible{outline:3px solid #ffc979;outline-offset:3px}
+    .pdf-exam-entry-icon{flex:none;display:grid;place-items:center;width:70px;height:70px;border-radius:18px;background:#ffc88020;border:1px solid #ffd79a66;font-size:2rem;animation:pdf-exam-pulse 3s ease-in-out infinite}
+    .pdf-exam-entry-copy{display:flex;flex-direction:column;gap:4px;min-width:0}
+    .pdf-exam-entry-tag{font-size:.7rem;font-weight:900;letter-spacing:.09em;color:#ffcf9e}
+    .pdf-exam-entry-copy strong{font-size:clamp(1.07rem,2.4vw,1.38rem);line-height:1.25}
+    .pdf-exam-entry-copy>span:not(.pdf-exam-entry-tag){font-size:.84rem;color:#fbe8de;line-height:1.5}
+    .pdf-exam-entry-copy em{font-size:.83rem;font-style:normal;font-weight:850;color:#ffd09d;margin-top:4px}
+    @keyframes pdf-exam-pulse{0%,100%{box-shadow:0 0 0 0 #ffc88022}50%{box-shadow:0 0 0 9px #ffc88000}}
+    :root[data-theme=light] .pdf-exam-entry-link{background:linear-gradient(110deg,#fff8ed,#fff0e2);border-color:#dc9a53;color:#53331f}
+    :root[data-theme=light] .pdf-exam-entry-tag,:root[data-theme=light] .pdf-exam-entry-copy em{color:#9e5417}
+    :root[data-theme=light] .pdf-exam-entry-copy>span:not(.pdf-exam-entry-tag){color:#765743}
+    @media(max-width:580px){.pdf-exam-entry-link{padding:15px 13px;gap:12px}.pdf-exam-entry-icon{width:57px;height:65px;font-size:1.7rem}}
+    @media(prefers-reduced-motion:reduce){.pdf-exam-entry-icon{animation:none}.pdf-exam-entry-link{transition:none}}
+
   </style>
 </head>
 <body>
@@ -99,6 +117,12 @@
           <h1 id="hero-title">Domine <span class="gradient-text">Logaritmos.</span><br>Conquiste o <span class="gradient-text">Futuro.</span></h1>
           <p class="hero-description">Transforme cada questão em uma conquista. Avance pelos mundos, aprenda com seus erros e use a matemática para dominar o dinheiro.</p>
 
+          <section class="pdf-exam-entry" aria-label="Agenda de vestibulares e lembretes">
+            <a class="pdf-exam-entry-link" href="./vestibulares.html">
+              <span class="pdf-exam-entry-icon" aria-hidden="true">📆</span>
+              <span class="pdf-exam-entry-copy"><span class="pdf-exam-entry-tag">✦ AGENDA DE PROVAS</span><strong>Vestibulares e Alertas de Estudo</strong><span>ENEM, UECE, Unichristus e Unifor. Monte seu cronograma e receba lembretes antes das provas.</span><em>Ver datas e programar →</em></span>
+            </a>
+          </section>
           <section class="pdf-flash-entry" aria-label="Flashcards de Matemática Financeira">
             <a class="pdf-flash-link" href="./flashcards.html" aria-label="Abrir flashcards de Matemática Financeira">
               <span class="pdf-flash-icon" aria-hidden="true">
@@ -210,6 +234,7 @@
       <section class="quick-section container" aria-labelledby="shortcuts-title">
         <div class="section-heading"><div><p class="eyebrow">APRENDA DO SEU JEITO</p><h2 id="shortcuts-title">Escolha sua próxima missão</h2></div></div>
         <div class="quick-grid">
+          <a class="quick-card" href="./vestibulares.html"><span class="quick-icon" aria-hidden="true" style="background:#f6ad5c21;color:#fac779">📆</span><span><strong>Vestibulares e Agenda de Estudos</strong><small>Calendário oficial, notificações de prova e sessões de revisão.</small></span><span class="quick-arrow" aria-hidden="true">→</span></a>
           <a class="quick-card" href="./flashcards.html"><span class="quick-icon" aria-hidden="true" style="background:#ec489924;color:#ff80bd">✦</span><span><strong>Flashcards Financeiros</strong><small>56 cartões de perguntas e respostas sobre 7 assuntos, com revisão e progresso.</small></span><span class="quick-arrow" aria-hidden="true">→</span></a>
           <a class="quick-card" href="./financeiro.html"><span class="quick-icon" aria-hidden="true">R$</span><span><strong>Central Financeira PRO</strong><small>Calculadoras, financiamento, Price, SAC e amortização antecipada.</small></span><span class="quick-arrow" aria-hidden="true">→</span></a>
           <button class="quick-card" type="button" data-route="simulador"><span class="quick-icon" aria-hidden="true">↗</span><span><strong>Laboratório financeiro</strong><small>Simule juros compostos e metas de investimento.</small></span><span class="quick-arrow" aria-hidden="true">→</span></button>
