@@ -231,6 +231,18 @@ function launchDestination() {
       showMissingAppMessage();
       return;
     }
+    if (pendingDestination.questionCode) {
+      // Reaproveita a consulta oficial da biblioteca e abre o gabarito comentado.
+      const lookupInput = frame.contentDocument.getElementById('question-search');
+      const lookupButton = frame.contentDocument.getElementById('lookup');
+      if (!lookupInput || !lookupButton) {
+        showMissingAppMessage();
+        return;
+      }
+      lookupInput.value = pendingDestination.questionCode;
+      lookupButton.click();
+      lookupInput.scrollIntoView({ block: 'start', behavior: 'auto' });
+    }
     frame.hidden = false;
     $('#stage-status').hidden = true;
     syncUserState();
