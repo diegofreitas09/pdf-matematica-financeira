@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ec4899">
+  <meta name="description" content="Flashcards de Matemática Financeira da PDF: estude porcentagem, taxas, juros, descontos, financiamentos, amortização e logaritmos com cartões de perguntas e respostas.">
+  <title>Flashcards | PDF Matemática Financeira</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icon-192.png">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('pdf-financeira-theme');
+        document.documentElement.setAttribute('data-theme', saved || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'));
+      } catch (_) { document.documentElement.setAttribute('data-theme', 'dark'); }
+    }());
+  </script>
+  <link rel="stylesheet" href="./flashcards.css">
+  <script src="./flashcards.js" defer></script>
+</head>
+<body>
+  <header class="fc-header">
+    <div class="fc-header-content">
+      <a class="fc-back" href="./index.html" aria-label="Voltar à página inicial da PDF Financeira">← Voltar ao início</a>
+      <a class="fc-brand" href="./index.html">PDF <strong>Financeira</strong></a>
+      <span class="fc-header-tag">ESTUDE NO SEU RITMO</span>
+    </div>
+  </header>
+  <main class="fc-container">
+    <section class="fc-heading" aria-labelledby="fc-title">
+      <span class="fc-kicker"><span aria-hidden="true">✦</span> SUA REVISÃO EM CARTÕES</span>
+      <div class="fc-title-row">
+        <div>
+          <h1 id="fc-title">Flashcards <span>Financeiros</span></h1>
+          <p>Leia a pergunta, pense na resposta e vire o cartão. Depois marque o que já aprendeu ou o que precisa revisar.</p>
+        </div>
+        <div class="fc-decor" aria-hidden="true"><span>?</span><span>✓</span></div>
+      </div>
+    </section>
+    <section class="fc-overview" aria-label="Meu progresso nos flashcards">
+      <div class="fc-metric"><small>Cartões no banco</small><strong id="fc-total">0</strong></div>
+      <div class="fc-metric"><small>Já aprendi</small><strong id="fc-known">0</strong></div>
+      <div class="fc-metric"><small>Quero revisar</small><strong id="fc-review">0</strong></div>
+      <div class="fc-metric"><small>Ainda não estudei</small><strong id="fc-new">0</strong></div>
+    </section>
+    <section class="fc-workspace" aria-label="Área de estudo dos flashcards">
+      <div class="fc-controls">
+        <label class="fc-field">Assunto
+          <select id="fc-topic"><option value="todos">Todos os assuntos</option></select>
+        </label>
+        <label class="fc-field">Mostrar cartões
+          <select id="fc-status">
+            <option value="todos">Todos</option>
+            <option value="new">Ainda não estudei</option>
+            <option value="review">Preciso revisar</option>
+            <option value="known">Já aprendi</option>
+          </select>
+        </label>
+        <button id="fc-shuffle" class="fc-secondary fc-shuffle" type="button">⇄ Embaralhar</button>
+      </div>
+      <div class="fc-track" aria-label="Progresso dos cartões aprendidos"><span id="fc-track-bar"></span></div>
+      <div class="fc-card-tools">
+        <span id="fc-position">Cartão 1 de 1</span>
+        <span id="fc-current-topic">Matemática Financeira</span>
+      </div>
+      <div id="fc-empty" class="fc-empty" hidden>
+        <div class="fc-empty-symbol" aria-hidden="true">✦</div>
+        <h2>Nenhum cartão neste filtro</h2>
+        <p id="fc-empty-message">Escolha outro assunto ou categoria para continuar estudando.</p>
+        <button id="fc-reset-filters" class="fc-primary" type="button">Ver todos os flashcards</button>
+      </div>
+      <div id="fc-study">
+        <button class="fc-card" id="fc-card" type="button" aria-label="Virar flashcard para revelar a resposta" aria-pressed="false">
+          <span class="fc-card-inner" id="fc-card-inner">
+            <span class="fc-card-face fc-card-front">
+              <span class="fc-card-overline">PERGUNTA</span>
+              <span id="fc-question" class="fc-card-text">Preparando flashcards...</span>
+              <span class="fc-card-hint">Toque para revelar a resposta <span aria-hidden="true">↻</span></span>
+            </span>
+            <span class="fc-card-face fc-card-back" aria-hidden="true">
+              <span class="fc-card-overline">RESPOSTA COMENTADA</span>
+              <span id="fc-answer" class="fc-card-text">A resposta aparecerá aqui.</span>
+              <span class="fc-card-hint">Toque para voltar à pergunta <span aria-hidden="true">↻</span></span>
+            </span>
+          </span>
+        </button>
+        <div class="fc-response">
+          <button type="button" class="fc-response-review" id="fc-mark-review" disabled>↻ Preciso revisar</button>
+          <button type="button" class="fc-response-known" id="fc-mark-known" disabled>✓ Já aprendi</button>
+        </div>
+        <div class="fc-navigation">
+          <button type="button" id="fc-prev" class="fc-secondary">← Anterior</button>
+          <span id="fc-hint">Vire o cartão para registrar seu aprendizado.</span>
+          <button type="button" id="fc-next" class="fc-secondary">Próximo →</button>
+        </div>
+      </div>
+      <p class="fc-local-note">Seu progresso fica salvo neste aparelho. Sem nota, sem pressa: revise até dominar.</p>
+      <p class="fc-screen-reader" id="fc-announcement" aria-live="polite" aria-atomic="true"></p>
+    </section>
+    <section class="fc-tips">
+      <div aria-hidden="true" class="fc-tips-icon">💡</div>
+      <div><h2>Como estudar melhor?</h2><p>Tente responder sem consultar o verso. Se errar, marque <strong>Preciso revisar</strong>. Volte a esses cartões depois e observe o quanto evoluiu!</p></div>
+    </section>
+  </main>
+  <footer class="fc-footer">PDF — Preparatório Diego Freitas · Matemática Financeira</footer>
+</body>
+</html>
