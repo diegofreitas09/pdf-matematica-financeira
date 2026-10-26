@@ -105,6 +105,22 @@ async function disable(){
  $('va-disable').hidden=true;status('Alertas do servidor desativados neste aparelho. Os estudos continuam salvos.');
  }catch(e){status('⚠ '+e.message);}
 }
+async function testAlert(){
+ try {
+  if(!('Notification' in window)||!('serviceWorker' in navigator))throw Error('Notificações indisponíveis neste navegador.');
+  const permission=await Notification.requestPermission();
+  if(permission!=='granted')throw Error('Autorize o envio de notificações primeiro.');
+  await navigator.serviceWorker.register('./sw.js');
+  const reg=await navigator.serviceWorker.ready;
+  await reg.showNotification('📚 PDF Financeira — hora da revisão!',{
+    body:'Este é um teste do aviso de vestibular. A vibração depende das permissões do celular.',
+    icon:'./icon-192.png',badge:'./icon-192.png',tag:'pdf-exam-notification-test',
+    vibrate:[180,100,180],data:{url:'/vestibulares.html'}
+  });
+  if('vibrate' in navigator)navigator.vibrate([140,80,140]);
+  status('✓ Notificação de teste enviada. Verifique o painel de notificações e as configurações de vibração do aparelho.');
+ }catch(e){status('⚠ '+e.message);}
+}
 function saveConfig(){state.hour=Number($('va-hour').value)||9;state.lead=[...document.querySelectorAll('[name=lead]:checked')].map(e=>Number(e.value)).sort((a,b)=>b-a);save();syncPush();}
 function escapeICS(s){return String(s).replace(/\\/g,'\\\\').replace(/\n/g,'\\n').replace(/,/g,'\\,').replace(/;/g,'\\;');}
 function eventICS(e,days){
@@ -161,7 +177,7 @@ function init(){
  $('va-events-filter').addEventListener('change',renderEvents);
  $('va-hour').addEventListener('change',saveConfig);
  document.querySelectorAll('[name=lead]').forEach(e=>e.addEventListener('change',saveConfig));
- $('va-activate').addEventListener('click',activate);$('va-disable').addEventListener('click',disable);
+ $('va-activate').addEventListener('click',activate);$('va-disable').addEventListener('click',disable);$('va-test-alert').addEventListener('click',testAlert);
  $('va-export').addEventListener('click',exportICS);
  $('va-study-form').addEventListener('submit',addStudy);$('va-auto-plan').addEventListener('click',planStudy);
  $('va-custom-form').addEventListener('submit',addCustom);
