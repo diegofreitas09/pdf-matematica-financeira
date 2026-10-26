@@ -81,5 +81,4 @@ export default async (request) => {
     return toJson({error:"Não foi possível salvar as notificações"},500);
   }
 };
-export const config={path:"/api/vestibulares-push",method:["GET","POST","DELETE"],
-  rateLimit:{action:"rate_limit",aggregateBy:"ip",windowSize:60,windowLimit:35}};
+export const config={path:"/api/vestibulares-push",method:["GET","POST","DELETE"]};
