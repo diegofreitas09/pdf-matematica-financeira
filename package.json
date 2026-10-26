@@ -1,0 +1,11 @@
+{
+  "name": "pdf-matematica-financeira",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "PWA de matemática financeira e calendário de vestibulares com lembretes push",
+  "dependencies": {
+    "@netlify/blobs": "11.1.4",
+    "web-push": "3.6.7"
+  }
+}
