@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6842c1"><title>Agenda de Vestibulares e Estudos | PDF Financeira</title>
+<meta name="description" content="Calendário oficial de vestibulares UECE, Unichristus, Unifor e ENEM. Organize a rotina de estudos e ative lembretes no celular.">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./icon-192.png">
+<script>(function(){try{document.documentElement.setAttribute('data-theme',localStorage.getItem('pdf-financeira-theme')||'dark')}catch(_){document.documentElement.setAttribute('data-theme','dark')}})();</script>
+<link rel="stylesheet" href="./vestibulares.css">
+<script src="./vestibulares.js" defer></script>
+</head>
+<body>
+<header class="va-header"><nav class="va-nav"><a href="./index.html" class="va-back">← Página inicial</a><span class="va-brand">PDF <strong>Financeira</strong></span><span class="va-brand-sub">RUMO À APROVAÇÃO</span></nav></header>
+<main class="va-main">
+<section class="va-hero">
+<span class="va-kicker">✦ PREPARE-SE COM ANTECEDÊNCIA</span>
+<h1>Agenda de <span>Vestibulares</span></h1>
+<p>Organize suas provas e sua rotina de estudos. Consulte as fontes oficiais, programe revisões e receba lembretes no celular após autorizar as notificações.</p>
+<div class="va-head-stats"><div><strong id="va-upcoming-count">—</strong><span>eventos futuros</span></div><div><strong id="va-next-count">—</strong><span>dias para o próximo evento</span></div></div>
+</section>
+<section class="va-alert" id="va-alert" aria-live="polite"><div class="va-alert-icon" aria-hidden="true">🔔</div><div><strong>Ative seus lembretes de vestibular</strong><p>Escolha suas provas e quantos dias antes deseja revisar. Os alertas são enviados ao celular nos horários configurados.</p></div><a href="#va-notifications" class="va-button va-button-primary">Programar alertas →</a></section>
+<div class="va-grid">
+<section class="va-panel" aria-labelledby="va-events-heading">
+<div class="va-panel-head"><div><span class="va-section-label">EDITAIS E CALENDÁRIOS OFICIAIS</span><h2 id="va-events-heading">Datas dos vestibulares</h2></div><select id="va-events-filter" aria-label="Filtrar eventos"><option value="future">Próximos</option><option value="all">Todos, inclusive passados</option><option value="past">Já realizados</option></select></div>
+<p class="va-note">Fontes verificadas em 26/10/2026. As datas podem ser retificadas pelas instituições. Acompanhe os editais oficiais.</p>
+<div id="va-events" class="va-events"></div>
+<div class="va-info"><strong>Unifor 2027.1:</strong> a prova presencial aconteceu em 27/09/2026. Para novas seleções ainda sem data oficial, adicione sua própria meta de estudos e acompanhe o <a href="https://unifor.br/web/graduacao/inscricoes" target="_blank" rel="noopener">portal da Unifor</a>.</div>
+</section>
+<aside class="va-panel va-settings" id="va-notifications" aria-labelledby="va-settings-heading">
+<span class="va-section-label">SEU CELULAR AVISA</span><h2 id="va-settings-heading">Programar lembretes</h2>
+<p>Selecione as provas para receber avisos de revisão antecipados, mesmo com o aplicativo fechado quando o push estiver ativo.</p>
+<fieldset class="va-checks"><legend>Quero acompanhar</legend><div id="va-exam-choices"></div></fieldset>
+<fieldset class="va-checks"><legend>Notificar com antecedência</legend>
+<div class="va-days">
+<label><input type="checkbox" name="lead" value="30"> 30 dias</label>
+<label><input type="checkbox" name="lead" value="14" checked> 14 dias</label>
+<label><input type="checkbox" name="lead" value="7" checked> 7 dias</label>
+<label><input type="checkbox" name="lead" value="3" checked> 3 dias</label>
+<label><input type="checkbox" name="lead" value="1" checked> 1 dia</label>
+</div></fieldset>
+<label class="va-field">Horário dos alertas de prova
+<select id="va-hour"><option value="7">07h</option><option value="8">08h</option><option value="9" selected>09h</option><option value="10">10h</option><option value="12">12h</option><option value="14">14h</option><option value="17">17h</option><option value="19">19h</option><option value="20">20h</option><option value="21">21h</option></select>
+</label>
+<button id="va-activate" class="va-button va-button-primary va-full" type="button">🔔 Ativar notificações no celular</button>
+<button id="va-disable" class="va-button va-button-outline va-full" type="button" hidden>Desativar notificações neste aparelho</button>
+<p id="va-push-status" class="va-status" role="status" aria-live="polite">Os avisos dependem da sua autorização e do suporte do celular.</p>
+<button class="va-button va-button-soft va-full" type="button" id="va-export">📅 Adicionar alertas ao calendário do celular (.ics)</button>
+<p class="va-foot">No Android, o sistema define a vibração conforme suas configurações. No iPhone, instale o app na Tela de Início e autorize as notificações. O calendário é uma alternativa para receber alarmes de forma independente.</p>
+</aside>
+</div>
+<section class="va-panel va-planner" aria-labelledby="va-plan-heading">
+<div><span class="va-section-label">ORGANIZE SUA PREPARAÇÃO</span><h2 id="va-plan-heading">Meu plano de estudos</h2><p>Crie sessões específicas ou gere um plano automático de revisões para a próxima prova que você selecionou.</p></div>
+<div class="va-planner-grid">
+<form id="va-study-form" class="va-form"><h3>Agendar sessão de estudo</h3>
+<label class="va-field">Assunto para estudar<input required id="va-study-title" maxlength="90" placeholder="Ex.: Juros compostos e questões UECE"></label>
+<div class="va-duo"><label class="va-field">Data<input id="va-study-date" type="date" required></label><label class="va-field">Horário (hora cheia)<select id="va-study-hour"><option value="07:00">07h</option><option value="08:00">08h</option><option value="09:00">09h</option><option value="10:00">10h</option><option value="12:00">12h</option><option value="14:00">14h</option><option value="16:00">16h</option><option value="18:00">18h</option><option value="19:00" selected>19h</option><option value="20:00">20h</option><option value="21:00">21h</option></select></label></div>
+<button type="submit" class="va-button va-button-primary va-full">+ Programar estudo</button>
+</form>
+<div class="va-auto"><h3>Montar revisões automaticamente</h3><p>Distribui os conteúdos ao longo dos dias anteriores à prova, com matemática, porcentagem, juros, exercícios e simulados.</p>
+<label class="va-field">Prova de referência<select id="va-plan-event"></select></label>
+<button type="button" id="va-auto-plan" class="va-button va-button-soft va-full">✦ Gerar plano até a prova</button>
+</div>
+</div>
+<div class="va-list-head"><h3>Sessões programadas <span id="va-session-count">0</span></h3><button type="button" class="va-text-btn" id="va-clear-past">Limpar sessões passadas</button></div>
+<div id="va-study-sessions" class="va-study-sessions"></div>
+</section>
+<section class="va-panel va-goals" aria-labelledby="va-goals-heading"><span class="va-section-label">OUTROS VESTIBULARES</span><h2 id="va-goals-heading">Adicionar outra prova</h2><p>Quando o edital de outro vestibular sair, cadastre a data confirmada para incluí-la nos lembretes.</p>
+<form class="va-custom-form" id="va-custom-form"><label class="va-field">Nome do vestibular<input id="va-custom-title" required maxlength="90" placeholder="Ex.: Vestibular da minha faculdade"></label><label class="va-field">Data da prova<input type="date" id="va-custom-date" required></label><label class="va-field">Prioridade de revisão<input id="va-custom-focus" maxlength="150" placeholder="Ex.: Matemática e redação"></label><button type="submit" class="va-button va-button-primary">Adicionar prova</button></form>
+</section>
+<p class="va-disclaimer">Atualização das datas oficiais: 26 de outubro de 2026. A PDF Financeira auxilia na organização, mas não substitui o edital nem efetua inscrição no vestibular. Os horários dos alertas seguem America/Sao_Paulo (horário de Brasília).</p>
+</main>
+<footer class="va-footer">PDF — Preparatório Diego Freitas · Estudo organizado é meio caminho da aprovação.</footer>
+</body>
+</html>
