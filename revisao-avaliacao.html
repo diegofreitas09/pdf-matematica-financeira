@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0F0C29">
+  <meta name="description" content="Revisão da Avaliação — PDF Matemática Financeira. Estude com questões e gabaritos comentados.">
+  <title>Revisão da Avaliação | PDF Financeira</title>
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <script>
+    try { document.documentElement.setAttribute('data-theme', localStorage.getItem('pdf-financeira-theme') || 'dark'); }
+    catch (_) { document.documentElement.setAttribute('data-theme', 'dark'); }
+  </script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="revisao-avaliacao.css">
+  <script src="revisao-avaliacao.js" defer></script>
+</head>
+<body>
+  <a href="#pdf-review-page" class="skip-link">Pular para a revisão</a>
+  <main class="pdf-review-page container" id="pdf-review-page">
+    <div class="pdf-review-top">
+      <a class="pdf-review-back" href="./index.html">← Voltar à página inicial</a>
+      <span class="pdf-review-top-name">✦ PDF Matemática Financeira</span>
+    </div>
+    <section class="pdf-review-hero" aria-labelledby="pdf-review-page-title">
+      <p class="pdf-review-eyebrow">✍️ Hora de aprender e praticar</p>
+      <h1 id="pdf-review-page-title">Revisão da Avaliação</h1>
+      <p id="pdf-review-page-description">Prepare-se para a avaliação com questões, respostas e comentários.</p>
+      <span class="pdf-review-status" id="pdf-review-page-status">Verificando a revisão...</span>
+    </section>
+    <section class="pdf-review-empty" id="pdf-review-empty" aria-live="polite">
+      <span class="pdf-review-empty-icon" aria-hidden="true">📚</span>
+      <h2>Estamos preparando sua revisão!</h2>
+      <p id="pdf-review-empty-message">Este espaço já está pronto. Assim que as questões forem publicadas, você poderá estudar e conferir as respostas comentadas aqui.</p>
+    </section>
+    <section class="pdf-review-workspace" id="pdf-review-workspace" aria-label="Questões da revisão" hidden>
+      <div class="pdf-review-tools">
+        <div><strong id="pdf-review-total">0 questões</strong><small id="pdf-review-reviewed" aria-live="polite">0 revisada(s)</small></div>
+        <div class="pdf-review-meter" role="progressbar" aria-label="Progresso da revisão" aria-valuemin="0" aria-valuemax="100"><span id="pdf-review-meter-fill"></span></div>
+      </div>
+      <div class="pdf-review-list" id="pdf-review-list"></div>
+    </section>
+  </main>
+  <footer class="site-footer container"><span>© 2026 PDF — Preparatório Diego Freitas</span><span>Aprenda, pratique e evolua.</span></footer>
+</body>
+</html>
