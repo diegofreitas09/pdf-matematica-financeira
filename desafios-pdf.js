@@ -169,8 +169,8 @@
     const topic = byId('pdf-desafios-assunto').value;
     const level = byId('pdf-desafios-nivel').value;
     let pool;
-    if (scope === 'current' && lastContext.question) pool = [lastContext.question];
-    else if (scope === 'world' && lastContext.pool.length) pool = lastContext.pool;
+    if (scope === 'current') pool = lastContext.question ? [lastContext.question] : [];
+    else if (scope === 'world') pool = lastContext.pool;
     else if (scope === 'answered') {
       const attempted = new Set((state.history || []).map(h => h.id));
       pool = BANK.filter(q => attempted.has(q.id));
@@ -192,6 +192,8 @@
   function openOrganizer(scope='all') {
     if(!dialog) return;
     const select=byId('pdf-desafios-escopo');
+    select.querySelector('[value="current"]').disabled = !lastContext.question;
+    select.querySelector('[value="world"]').disabled = !lastContext.pool.length;
     if(scope==='world'&&!lastContext.pool.length)scope='all';
     if(scope==='current'&&!lastContext.question)scope='all';
     select.value=scope;
@@ -214,6 +216,7 @@
     } catch(err) {
       if(status)status.textContent='Não foi possível baixar agora. Use a opção "Abrir para imprimir" ou tente novamente com internet.';
       console.error('[PDF Financeira] Erro ao exportar caderno:',err);
+      if (!dialog || !dialog.open) alert('Não foi possível baixar agora. Confira a conexão e tente novamente ou abra o organizador para imprimir.');
     } finally {
       if(button){button.disabled=false;button.textContent=label;}
     }
@@ -277,6 +280,7 @@
       box.querySelector('[data-pdf-organizar]').onclick=e=>{e.preventDefault();openOrganizer('world');};
       return;
     }
+    if (!active) lastContext={question:null,pool:[]};
     if(screen.querySelector('.hero') && !screen.querySelector('.pdf-desafios-chamada') && !active) {
       const call=document.createElement('section');
       call.className='pdf-desafios-chamada';
