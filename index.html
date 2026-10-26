@@ -30,10 +30,12 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="experience.css">
   <link rel="stylesheet" href="revisao-avaliacao.css">
+  <link rel="stylesheet" href="voice-lookup.css">
   <script src="script.js" defer></script>
   <script src="experience.js" defer></script>
   <script src="install.js" defer></script>
   <script src="revisao-avaliacao.js" defer></script>
+  <script src="voice-lookup.js" defer></script>
   <style>
     .install-banner{margin:24px auto;max-width:1180px;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;background:linear-gradient(110deg,#173754,#25325c);border:1px solid #539ed1;border-radius:20px;color:#fff;box-shadow:0 8px 30px #0002}
     .install-banner h2{font-size:clamp(1.1rem,3vw,1.45rem);margin:0 0 5px;color:#fff}.install-banner p{margin:0;color:#e1eeff}.install-launch{min-height:48px;border:1px solid #82defc;border-radius:12px;padding:10px 19px;background:#097ea9;color:white;font-weight:800;cursor:pointer}
@@ -72,6 +74,22 @@
           <p class="eyebrow"><span class="online-dot" aria-hidden="true"></span> PREPARATÓRIO DIEGO FREITAS · TEMPORADA 01</p>
           <h1 id="hero-title">Domine <span class="gradient-text">Logaritmos.</span><br>Conquiste o <span class="gradient-text">Futuro.</span></h1>
           <p class="hero-description">Transforme cada questão em uma conquista. Avance pelos mundos, aprenda com seus erros e use a matemática para dominar o dinheiro.</p>
+          <section class="pdf-voice-entry" id="pdf-voice-entry" aria-labelledby="pdf-voice-title">
+            <button type="button" class="pdf-voice-mic" id="pdf-voice-trigger" aria-label="Dizer código da questão pelo microfone" aria-pressed="false" title="Consultar questão por voz">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="2" width="6" height="13" rx="3"></rect><path d="M5 10a7 7 0 0 0 14 0M12 17v5M8 22h8"></path></svg>
+            </button>
+            <div class="pdf-voice-copy">
+              <span class="pdf-voice-kicker">✦ BUSCA INTELIGENTE POR VOZ</span>
+              <h2 id="pdf-voice-title">Diga o código. Encontre a questão.</h2>
+              <p>Toque no microfone lilás e diga, por exemplo, “questão vinte e sete”. O gabarito e a explicação aparecem na consulta.</p>
+              <form class="pdf-voice-form" id="pdf-voice-form">
+                <label class="visually-hidden" for="pdf-voice-code">Código da questão</label>
+                <input class="pdf-voice-input" id="pdf-voice-code" type="text" placeholder="Ex.: PDF-MF-0027" autocomplete="off" spellcheck="false" inputmode="text" maxlength="28">
+                <button class="pdf-voice-submit" type="submit">Consultar questão</button>
+              </form>
+              <p class="pdf-voice-status" id="pdf-voice-status" role="status" aria-live="polite">Diga o código pelo microfone ou digite.</p>
+            </div>
+          </section>
           <section class="pdf-review-entry" id="pdf-review-entry" data-state="draft" aria-label="Revisão da avaliação">
             <a class="pdf-review-entry-link" href="./revisao-avaliacao.html" aria-label="Abrir o espaço da revisão da avaliação, em preparação">
               <span class="pdf-review-entry-icon" aria-hidden="true">✍️</span>
