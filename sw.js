@@ -1,7 +1,7 @@
 /* PDF Financeira — cache versionado, navegação offline correta e atualização segura. */
-const CACHE='pdf-financeira-aurora-v24';
+const CACHE='pdf-financeira-aurora-v25';
 const PREFIX='pdf-financeira-';
-const ASSETS=['./','./index.html','./flashcards.html','./flashcards.css','./flashcards.js','./style.css','./script.js','./plataforma.html','./financeiro.html','./calculator-pro.js','./uece-financeira.html','./experience.js','./install.js','./study-reminders.html','./study-reminders.js','./experience.css','./revisao-avaliacao.html','./revisao-avaliacao.css','./revisao-avaliacao.js','./revisao-avaliacao.json','./voice-lookup.js','./voice-lookup.css','./desafios-pdf.js','./desafios-pdf.css','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
+const ASSETS=['./','./index.html','./vestibulares.html','./vestibulares.css','./vestibulares.js','./flashcards.html','./flashcards.css','./flashcards.js','./style.css','./script.js','./plataforma.html','./financeiro.html','./calculator-pro.js','./uece-financeira.html','./experience.js','./install.js','./study-reminders.html','./study-reminders.js','./experience.css','./revisao-avaliacao.html','./revisao-avaliacao.css','./revisao-avaliacao.js','./revisao-avaliacao.json','./voice-lookup.js','./voice-lookup.css','./desafios-pdf.js','./desafios-pdf.css','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting()));
 });
@@ -31,6 +31,21 @@ self.addEventListener('fetch',event=>{
     }
   })());
 });
+// O servidor envia alertas mesmo quando a janela estiver fechada, com permissão do usuário.
+self.addEventListener('push', event => {
+  let data={};
+  try {data=event.data ? event.data.json() : {};} catch (_) { data={}; }
+  const title=String(data.title||'PDF Financeira — hora de estudar').slice(0,130);
+  const body=String(data.body||'Abra sua agenda de estudos e revise para o vestibular.').slice(0,280);
+  const opts={
+    body,icon:'./icon-192.png',badge:'./icon-192.png',
+    tag:String(data.tag||'pdf-financeira-study').slice(0,130),renotify:true,
+    vibrate:[160,90,160],
+    data:{url:typeof data.url==='string'&&data.url.startsWith('/')?data.url:'/vestibulares.html'}
+  };
+  event.waitUntil(self.registration.showNotification(title,opts));
+});
+
 self.addEventListener('notificationclick',event=>{
   event.notification.close();
   const url=new URL(event.notification.data?.url||'./?revisar=1',self.registration.scope).href;
