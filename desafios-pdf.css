@@ -1,0 +1,129 @@
+/* Área de download dos desafios — integrada ao visual da PDF Financeira */
+.pdf-desafios-atividade {
+  padding: 18px 19px;
+  margin: 16px 0 20px;
+  border: 1px solid rgba(76,165,238,.55);
+  border-radius: 17px;
+  background: linear-gradient(120deg,rgba(50,103,181,.14),rgba(69,184,212,.09));
+  box-shadow: 0 8px 25px rgba(10,32,70,.06);
+}
+.pdf-desafios-atividade-title {
+  font-size: .82rem;
+  letter-spacing: .075em;
+  font-weight: 900;
+  color: var(--text, #24507c);
+  margin-bottom: 12px;
+}
+.pdf-desafios-actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.pdf-desafios-actions button { min-height: 44px; font-size: .91rem; line-height: 1.35; }
+.pdf-desafios-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: .9rem;
+  font-weight: 800;
+  padding: 8px 7px;
+  color: #0e83bd;
+  text-underline-offset: 4px;
+}
+.pdf-desafios-atividade .pdf-desafios-hint {
+  margin: 12px 0 0;
+  font-size: .85rem;
+  color: var(--muted,#526e89);
+}
+.pdf-desafios-chamada {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: clamp(15px,2vw,23px);
+  margin: 17px 0 23px;
+  border-radius: 20px;
+  border: 1px solid #b2d1ee;
+  background: linear-gradient(115deg,#e8f5ff,#e9effc);
+  box-shadow: 0 9px 30px rgba(30,67,124,.1);
+}
+.pdf-desafios-chamada-icon {
+  display: grid; place-items: center;
+  width: 61px; height: 61px; flex: 0 0 61px;
+  background: #d2eaff; border-radius: 17px; font-size: 32px;
+}
+.pdf-desafios-chamada-text {
+  display: flex; flex-direction: column; gap: 3px; flex: 1; min-width: 0;
+  color: #243b5d;
+}
+.pdf-desafios-chamada-text strong { font-size: clamp(1.05rem,2vw,1.4rem); color: #194b85; }
+.pdf-desafios-chamada-text span { font-size: .88rem; line-height: 1.48; }
+.pdf-desafios-chamada .primary { min-height: 47px; font-size: .87rem; }
+.pdf-desafios-mission-button { width: 100%; margin-top: 9px; }
+
+#pdf-desafios-organizador {
+  position: fixed; inset: 0;
+  width: min(650px,calc(100% - 24px));
+  max-height: min(90dvh,790px);
+  overflow: auto;
+  margin: auto;
+  padding: clamp(20px,3vw,29px);
+  border: 1px solid #b8d6ee;
+  border-radius: 23px;
+  background: #f9fcff;
+  color: #273b54;
+  box-shadow: 0 24px 90px rgba(2,15,39,.5);
+  font-family: Inter,system-ui,sans-serif;
+  line-height: 1.52;
+}
+#pdf-desafios-organizador::backdrop { background: rgba(5,18,43,.79); backdrop-filter: blur(6px); }
+.pdf-desafios-modal-head { display: flex; justify-content: space-between; gap: 15px; margin-bottom: 21px; }
+.pdf-desafios-modal-head h2 {
+  font-size: clamp(1.33rem,3vw,1.8rem); margin: 5px 0 7px;
+  color: #193d70; letter-spacing: -.02em; line-height: 1.23;
+}
+.pdf-desafios-modal-head p { font-size: .9rem; color: #4f627b; margin: 0; }
+.pdf-desafios-tag { font-size: .69rem; font-weight: 900; letter-spacing: .11em; color: #2183b3; }
+.pdf-desafios-x {
+  flex: 0 0 39px; width: 39px; height: 39px;
+  display: grid; place-items: center;
+  border-radius: 12px; border: 1px solid #c4d4e8;
+  color: #244c7e; background: #eaf2fc; cursor: pointer;
+}
+.pdf-desafios-select-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+}
+.pdf-desafios-select-grid label {
+  display: flex; flex-direction: column; gap: 6px;
+  font-size: .83rem; color: #3e526f; font-weight: 800;
+}
+.pdf-desafios-select-grid select {
+  width: 100%; min-height: 46px;
+  padding: 9px 12px;
+  color: #203751; background: #fff;
+  border: 1px solid #bed2eb; border-radius: 11px;
+  font: 500 .92rem Inter,system-ui,sans-serif;
+}
+.pdf-desafios-check {
+  display: flex; gap: 10px; align-items: center;
+  min-height: 38px; font-size: .88rem;
+  font-weight: 700; color: #334968;
+}
+.pdf-desafios-check:first-of-type { margin-top: 16px; }
+.pdf-desafios-check input { width: 18px; height: 18px; accent-color: #2774b4; }
+.pdf-desafios-count {
+  margin: 13px 0 15px; padding: 10px 13px;
+  border-radius: 10px; background: #e5f3ff;
+  font-weight: 800; color: #18588d; font-size: .86rem;
+}
+#pdf-desafios-organizador .pdf-desafios-actions button { padding: 11px 15px; border-radius: 12px; }
+.pdf-desafios-status { font-size: .83rem; color: #375879; margin: 13px 0 0; min-height: 1.2em; }
+#pdf-desafios-organizador button:focus-visible,
+#pdf-desafios-organizador select:focus-visible,
+.pdf-desafios-link:focus-visible { outline: 3px solid #f1ae49; outline-offset: 3px; }
+#pdf-desafios-organizador [disabled] { opacity: .6; cursor: not-allowed; }
+@media(max-width:680px) {
+ .pdf-desafios-chamada { align-items: flex-start; flex-wrap: wrap; }
+ .pdf-desafios-chamada .primary { width: 100%; }
+ .pdf-desafios-select-grid { grid-template-columns: 1fr; gap: 12px; }
+ .pdf-desafios-actions { flex-direction: column; align-items: stretch; }
+ .pdf-desafios-actions > button, .pdf-desafios-link { width: 100%; justify-content: center; }
+ .pdf-desafios-atividade { padding: 14px; }
+ .pdf-desafios-atividade .pdf-desafios-atividade-title { margin-bottom: 9px; }
+}
+@media(prefers-reduced-motion:reduce) { #pdf-desafios-organizador::backdrop { backdrop-filter: none; } }
