@@ -1,0 +1,65 @@
+{
+  "titulo": "Revisão de Matemática Financeira — 2ª série",
+  "descricao": "5 questões sobre juros simples e compostos, logaritmos, reinvestimento e porcentagem. Resolva e confira a explicação de cada questão.",
+  "publicada": true,
+  "atualizadaEm": "2026-11-02-2med",
+  "publicacaoId": "revisao-2med-20261102",
+  "questoes": [
+    {
+      "id": "rev-2med-20261102-1",
+      "enunciado": "Um museu possui R$ 18.000,00 em um fundo destinado à digitalização de seu acervo. O orçamento do serviço é de R$ 27.000,00 e ficará fixo durante o planejamento. Em uma simulação sem novos depósitos, o fundo rende juros compostos de 6% ao ano. O prazo, em anos, para o saldo atingir o valor do serviço é mais próximo de:\n\nUtilize log(1,5) = 0,176 e log(1,06) = 0,025, na mesma base.",
+      "assunto": "Juros compostos e logaritmos",
+      "resposta": "C",
+      "comentario": "M = C × (1 + i)ᵗ. Substituindo: 27.000 = 18.000 × (1,06)ᵗ. Assim, (1,06)ᵗ = 1,5.\n\nt = log(1,5)/log(1,06) = 0,176/0,025 = 7,04 anos. O valor mais próximo é 7 anos (C).\n\nO tempo está no expoente; usamos logaritmos para isolá-lo. A questão pede aproximação, não o primeiro ano completo em que a meta é alcançada.",
+      "alternativas": [
+        "4 anos.",
+        "5 anos.",
+        "7 anos.",
+        "9 anos.",
+        "12 anos."
+      ]
+    },
+    {
+      "id": "rev-2med-20261102-2",
+      "enunciado": "Uma associação comprou um conjunto de equipamentos para suas oficinas de robótica. O fornecedor ofereceu pagamento único dois anos após a entrega, sem entrada, cobrando juros compostos de 8% ao ano sobre o preço à vista. A nota do pagamento final registra R$ 17.496,00, sem outras taxas. Para prestar contas, a associação precisa identificar o preço à vista dos equipamentos. Qual era esse valor?",
+      "assunto": "Capital inicial",
+      "resposta": "R$ 15.000,00",
+      "comentario": "M = C × (1 + i)ᵗ. Logo, C = M/(1 + i)ᵗ.\n\nC = 17.496/(1,08)² = 17.496/1,1664 = R$ 15.000,00.\n\nO pagamento final contém o preço à vista e os juros. Para recuperar o capital inicial, dividimos pelo fator de capitalização."
+    },
+    {
+      "id": "rev-2med-20261102-3",
+      "enunciado": "Uma biblioteca comunitária arrecadou R$ 6.400,00 para ampliar seu espaço de leitura. Antes da obra, o dinheiro ficou aplicado a juros simples de 2% ao mês durante 15 meses. No encerramento dessa etapa, todo o saldo foi transferido para outra modalidade, também de juros simples, que pagava 5% ao bimestre. A segunda aplicação durou um ano e seis meses, sem depósitos ou retiradas. O valor disponível para a obra ao final das duas etapas foi:",
+      "assunto": "Aplicações sucessivas",
+      "resposta": "D",
+      "comentario": "Primeira etapa: M₁ = 6.400 × (1 + 0,02 × 15) = 6.400 × 1,30 = R$ 8.320,00.\n\nSegunda etapa: 1 ano e 6 meses = 18 meses = 9 bimestres. O novo capital é todo o saldo anterior.\n\nM₂ = 8.320 × (1 + 0,05 × 9) = 8.320 × 1,45 = R$ 12.064,00 (D).\n\nTaxa e prazo precisam estar na mesma unidade. As duas aplicações são de juros simples; o montante da primeira vira o capital da segunda.",
+      "alternativas": [
+        "R$ 9.280,00.",
+        "R$ 10.560,00.",
+        "R$ 11.200,00.",
+        "R$ 12.064,00.",
+        "R$ 15.808,00."
+      ]
+    },
+    {
+      "id": "rev-2med-20261102-4",
+      "enunciado": "Uma confeitaria precisa comprar um forno cujo preço à vista é R$ 12.000,00. Três fornecedores oferecem o mesmo modelo e permitem pagamento único cinco meses após a entrega, sem entrada e sem outras cobranças. As condições são:\n\nFornecedor A: juros simples de 18% ao ano sobre o preço à vista.\nFornecedor B: juros simples de 0,06% ao dia sobre o preço à vista.\nFornecedor C: pagamento final fixado em R$ 12.840,00.\nConsidere cada mês com 30 dias. Analise as afirmações e some os códigos das verdadeiras.\n01. O acréscimo cobrado pelo fornecedor A será de R$ 900,00.\n02. O pagamento ao fornecedor B será menor do que o pagamento ao fornecedor A.\n04. A condição do fornecedor C resultará no menor desembolso para a confeitaria.\n08. O acréscimo do fornecedor C corresponde a uma taxa de juros simples de 8,4% ao semestre.",
+      "assunto": "Somatório — juros simples",
+      "resposta": "Soma 13 (01 + 04 + 08)",
+      "comentario": "Fornecedor A: 5 meses = 5/12 de ano. J = 12.000 × 0,18 × (5/12) = R$ 900,00. M = R$ 12.900,00.\n\nFornecedor B: 5 meses = 150 dias; 0,06% = 0,0006. J = 12.000 × 0,0006 × 150 = R$ 1.080,00. M = R$ 13.080,00.\n\nFornecedor C: J = 12.840 − 12.000 = R$ 840,00. Taxa mensal: i = 840/(12.000 × 5) = 0,014 = 1,4% ao mês. Taxa simples proporcional semestral: 1,4% × 6 = 8,4%.\n\n01: verdadeira; os juros de A são R$ 900,00.\n02: falsa; B custa mais do que A.\n04: verdadeira; C tem o menor desembolso.\n08: verdadeira; C corresponde a 8,4% ao semestre.\n\nSoma: 01 + 04 + 08 = 13."
+    },
+    {
+      "id": "rev-2med-20261102-5",
+      "enunciado": "Em um curso de fotografia, o valor integral da inscrição é x reais, com x > 0. Um programa de incentivo cobre 12,5% desse valor, e o estudante paga somente a parte restante, sem taxas adicionais. O sistema precisa calcular automaticamente a quantia f(x) custeada pelo estudante. Qual expressão deve ser utilizada?",
+      "assunto": "Porcentagem e função",
+      "resposta": "B",
+      "comentario": "O incentivo cobre 12,5%. O estudante paga 100% − 12,5% = 87,5% do valor integral.\n\nf(x) = 0,875x = 875x/1000 = 7x/8 (B).\n\nA: subtrai um valor fixo de 12,5, em vez de uma porcentagem.\nB: correta; sete oitavos equivalem a 87,5%.\nC: x/8 representa apenas os 12,5% cobertos pelo programa.\nD: 9x/8 representa 112,5%, um acréscimo.\nE: acrescenta um valor fixo de 0,125.\n\nO estudante paga sete oitavos; o programa cobre o oitavo restante.",
+      "alternativas": [
+        "f(x) = x − 12,5.",
+        "f(x) = 7x/8",
+        "f(x) = x/8",
+        "f(x) = 9x/8",
+        "f(x) = 0,125 + x."
+      ]
+    }
+  ]
+}

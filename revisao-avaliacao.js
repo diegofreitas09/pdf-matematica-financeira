@@ -5,12 +5,13 @@
   const page = document.getElementById('pdf-review-page');
   if (!entry && !page) return;
 
+  const series = new URLSearchParams(location.search).get('serie') === '2' ? '2' : '1';
   const byId = (id) => document.getElementById(id);
   const validQuestion = (q) => q && typeof q.enunciado === 'string' && q.enunciado.trim().length > 0;
   const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
   async function fetchRevision() {
-    const response = await fetch('./revisao-avaliacao.json', { cache: 'no-store' });
+    const response = await fetch(series === '2' ? './revisao-2serie.json' : './revisao-avaliacao.json', { cache: 'no-store' });
     if (!response.ok) throw new Error('Não foi possível consultar a revisão');
     const data = await response.json();
     if (!data || typeof data !== 'object') throw new Error('Conteúdo inválido');
@@ -25,11 +26,11 @@
     const description = byId('pdf-review-entry-description');
     if (tag) tag.textContent = available ? '✦ REVISÃO DISPONÍVEL AGORA' : '✎ ESPAÇO DE REVISÃO';
     if (description) description.textContent = available
-      ? questions.length + ' questão(ões) para estudar. Toque e comece a revisão!'
+      ? '1ª e 2ª séries · questões com respostas comentadas. Escolha sua revisão!'
       : 'Estamos preparando as questões da próxima avaliação.';
     const link = entry.querySelector('a');
     if (link) link.setAttribute('aria-label', available
-      ? 'Abrir revisão da avaliação, ' + questions.length + ' questões disponíveis'
+      ? 'Abrir revisões da 1ª e 2ª séries'
       : 'Abrir o espaço da revisão da avaliação, em preparação');
   }
 
@@ -69,10 +70,13 @@
     workspace.hidden = !available;
     if (!available) return;
 
+    document.querySelectorAll('[data-review-series]').forEach(a => { if (a.dataset.reviewSeries === series) a.setAttribute('aria-current', 'page'); });
+    document.querySelectorAll('[data-review-download]').forEach(a => { a.hidden = series === '2'; });
+    byId('review-download-2').hidden = series !== '2';
     const list = byId('pdf-review-list');
     const total = questions.length;
     byId('pdf-review-total').textContent = total + (total === 1 ? ' questão' : ' questões');
-    const key = 'pdf-revisao-avaliacao-estudo-v1:' + String(data.atualizadaEm || 'sem-data');
+    const key = 'pdf-revisao-avaliacao-estudo-v1:' + series + ':' + String(data.atualizadaEm || 'sem-data');
     const allIds = questions.map((q, idx) => String(q.id || 'questao-' + (idx + 1)));
     const reviewed = readProgress(key);
     const updateProgress = () => {
@@ -93,7 +97,7 @@
       const top = node('div', 'pdf-review-question-header');
       top.append(node('span', 'pdf-review-number', 'QUESTÃO ' + String(idx + 1).padStart(2, '0') + ' · ' + id));
       if (q.assunto) top.append(node('span', 'pdf-review-topic', q.assunto));
-      card.append(top, node('h2', '', q.enunciado));
+      const statement = node('h2', '', q.enunciado); statement.style.whiteSpace = 'pre-line'; card.append(top, statement);
 
       const options = optionsOf(q);
       const answer = q.resposta == null ? '' : String(q.resposta).trim();
@@ -117,7 +121,19 @@
           input.type = 'radio';
           input.name = 'pdf-review-choice-' + idx;
           input.value = letter;
-          label.append(input, node('span', 'pdf-review-choice-letter', letter + ')'), node('span', '', text));
+          const optionText = node('span', '', text);
+          const frac = text.match(/^f\(x\) = (7x|9x|x)\/8$/);
+          if (frac) {
+            optionText.textContent = 'f(x) = ';
+            const ns = 'http://www.w3.org/1998/Math/MathML';
+            const math = document.createElementNS(ns, 'math');
+            math.setAttribute('aria-label', frac[1] + ' sobre 8');
+            const f = document.createElementNS(ns, 'mfrac');
+            const n = document.createElementNS(ns, 'mtext'); n.textContent = frac[1];
+            const d = document.createElementNS(ns, 'mn'); d.textContent = '8';
+            f.append(n, d); math.append(f); optionText.append(math);
+          }
+          label.append(input, node('span', 'pdf-review-choice-letter', letter + ')'), optionText);
           field.append(label);
         });
         const check = node('button', 'pdf-review-action', 'Conferir minha resposta');

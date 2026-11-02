@@ -17,7 +17,7 @@
   </script>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="revisao-avaliacao.css">
-  <script src="revisao-avaliacao.js" defer></script>
+  <script src="revisao-avaliacao.js?v=30" defer></script>
 </head>
 <body>
   <a href="#pdf-review-page" class="skip-link">Pular para a revisão</a>
@@ -32,12 +32,14 @@
       <p id="pdf-review-page-description">Prepare-se para a avaliação com questões, respostas e comentários.</p>
       <span class="pdf-review-status" id="pdf-review-page-status">Verificando a revisão...</span>
     </section>
+    <nav class="pdf-review-download-actions" aria-label="Escolha a série" style="margin-bottom:24px"><a class="pdf-review-action" data-review-series="1" href="?serie=1">1ª série · 10 questões</a><a class="pdf-review-action" data-review-series="2" href="?serie=2">2ª série · 5 questões</a></nav>
     <section class="pdf-review-downloads" aria-label="Materiais para baixar">
       <h2>Material de revisão</h2>
       <p>Estude no aplicativo ou baixe os arquivos para editar e imprimir.</p>
       <div class="pdf-review-download-actions">
-        <a class="pdf-review-action" href="./materiais/revisao-financeira-1med.docx" download>Baixar revisão em Word</a>
-        <a class="pdf-review-action" href="./materiais/gabarito-comentado-financeira-1med.docx" download>Baixar gabarito comentado em Word</a>
+        <a data-review-download class="pdf-review-action" href="./materiais/revisao-financeira-1med.docx" download>Baixar revisão em Word</a>
+        <a data-review-download class="pdf-review-action" href="./materiais/gabarito-comentado-financeira-1med.docx" download>Baixar gabarito comentado em Word</a>
+        <a id="review-download-2" class="pdf-review-action" href="./materiais/revisao-financeira-2med.docx" download hidden>Baixar revisão da 2ª série em Word</a>
       </div>
       <p>Para receber avisos no celular, <a href="./vestibulares.html#va-activate">ative as notificações</a>. A instalação do app, sozinha, não autoriza os alertas.</p>
     </section>
