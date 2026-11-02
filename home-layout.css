@@ -37,3 +37,21 @@
 @media(max-width:800px){.tools-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.home-dashboard .hero{grid-template-columns:1fr;gap:24px;padding-top:32px}.hero-note{display:none}.home-dashboard .nav-inner{gap:10px}.home-dashboard .section-heading{align-items:flex-start}.home-dashboard .pdf-voice-entry{display:flex}}
 @media(max-width:540px){.hub-grid{grid-template-columns:1fr}.home-dashboard .nav-inner{min-height:100px}.home-dashboard .nav-links{gap:0}.home-dashboard .nav-link{font-size:.78rem;padding:6px}.home-dashboard .overview-item{padding:12px 8px}.home-dashboard .overview-item small{font-size:.68rem}.home-dashboard .overview-icon{display:none}.home-dashboard .overview-item strong{font-size:1.2rem}.home-dashboard .hero h1{font-size:1.9rem}.hub-card,.review-hub>a{padding:18px}.home-dashboard .hero-actions>*{flex:1 1 100%;justify-content:center}.home-dashboard .pdf-voice-entry{flex-direction:column;align-items:flex-start}.home-dashboard .install-banner{padding:18px}.home-dashboard .section-heading{gap:12px;flex-wrap:wrap}}
 @media(prefers-reduced-motion:reduce){.hub-card{transition:none}.hub-card:hover{transform:none}}
+
+/* Destaque exclusivo da revisão: brilho suave e luz percorrendo a borda. */
+@property --review-angle{syntax:"<angle>";initial-value:0deg;inherits:false}
+.home-dashboard .review-hub{
+  --review-angle:0deg;
+  border:2px solid transparent;
+  background:linear-gradient(var(--hub-card),var(--hub-card)) padding-box,
+    conic-gradient(from var(--review-angle),#769dff 0deg,#769dff 80deg,#ad83ff 150deg,#64e9ff 210deg,#d9fbff 235deg,#64e9ff 255deg,#769dff 360deg) border-box;
+  box-shadow:0 0 12px #6b99ff35,0 0 28px #9676ff20;
+  animation:review-border-flow 5s linear infinite,review-glow 3s ease-in-out infinite;
+}
+.home-dashboard .review-hub:hover,.home-dashboard .review-hub:focus-within{
+  box-shadow:0 0 18px #689cff60,0 0 36px #9775ff35;
+}
+.home-dashboard .review-hub .hub-icon{background:linear-gradient(135deg,#6d9fff25,#ad83ff25)}
+@keyframes review-border-flow{to{--review-angle:360deg}}
+@keyframes review-glow{0%,100%{box-shadow:0 0 10px #6b99ff30,0 0 24px #9676ff18}50%{box-shadow:0 0 18px #6b99ff55,0 0 34px #9676ff30}}
+@media(prefers-reduced-motion:reduce){.home-dashboard .review-hub{animation:none}}
