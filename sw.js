@@ -1,5 +1,5 @@
 /* PDF Financeira — cache versionado, navegação offline correta e atualização segura. */
-const CACHE='pdf-financeira-review-training-v31';
+const CACHE='pdf-financeira-review-highlight-v32';
 const PREFIX='pdf-financeira-';
 const ASSETS=['./home-layout.css','./','./index.html','./vestibulares.html','./vestibulares.css','./vestibulares.js','./flashcards.html','./flashcards.css','./flashcards.js','./style.css','./script.js','./plataforma.html','./financeiro.html','./calculator-pro.js','./uece-financeira.html','./experience.js','./install.js','./study-reminders.html','./study-reminders.js','./experience.css','./revisao-avaliacao.html','./revisao-avaliacao.css','./revisao-avaliacao.js','./revisao-avaliacao.json','./revisao-2serie.json','./review-training.js','./treino-1serie.json','./treino-2serie.json','./voice-lookup.js','./voice-lookup.css','./desafios-pdf.js','./desafios-pdf.css','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',event=>{

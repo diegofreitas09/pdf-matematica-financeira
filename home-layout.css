@@ -38,20 +38,25 @@
 @media(max-width:540px){.hub-grid{grid-template-columns:1fr}.home-dashboard .nav-inner{min-height:100px}.home-dashboard .nav-links{gap:0}.home-dashboard .nav-link{font-size:.78rem;padding:6px}.home-dashboard .overview-item{padding:12px 8px}.home-dashboard .overview-item small{font-size:.68rem}.home-dashboard .overview-icon{display:none}.home-dashboard .overview-item strong{font-size:1.2rem}.home-dashboard .hero h1{font-size:1.9rem}.hub-card,.review-hub>a{padding:18px}.home-dashboard .hero-actions>*{flex:1 1 100%;justify-content:center}.home-dashboard .pdf-voice-entry{flex-direction:column;align-items:flex-start}.home-dashboard .install-banner{padding:18px}.home-dashboard .section-heading{gap:12px;flex-wrap:wrap}}
 @media(prefers-reduced-motion:reduce){.hub-card{transition:none}.hub-card:hover{transform:none}}
 
-/* Destaque exclusivo da revisão: brilho suave e luz percorrendo a borda. */
+/* Revisão em destaque: contorno luminoso contínuo e halo pulsante. */
 @property --review-angle{syntax:"<angle>";initial-value:0deg;inherits:false}
 .home-dashboard .review-hub{
   --review-angle:0deg;
-  border:2px solid transparent;
+  position:relative;
+  border:3px solid transparent;
   background:linear-gradient(var(--hub-card),var(--hub-card)) padding-box,
-    conic-gradient(from var(--review-angle),#769dff 0deg,#769dff 80deg,#ad83ff 150deg,#64e9ff 210deg,#d9fbff 235deg,#64e9ff 255deg,#769dff 360deg) border-box;
-  box-shadow:0 0 12px #6b99ff35,0 0 28px #9676ff20;
-  animation:review-border-flow 5s linear infinite,review-glow 3s ease-in-out infinite;
+    conic-gradient(from var(--review-angle),#3388ff 0deg,#724bff 65deg,#d178ff 110deg,#40ddff 150deg,#efffff 175deg,#40ddff 195deg,#3388ff 230deg,#724bff 285deg,#d178ff 315deg,#efffff 345deg,#3388ff 360deg) border-box;
+  box-shadow:0 0 8px #38dfff80,0 0 24px #438cff65,0 0 42px #9f62ff40;
+  animation:review-border-flow 3.6s linear infinite,review-glow 3.2s ease-in-out infinite;
 }
-.home-dashboard .review-hub:hover,.home-dashboard .review-hub:focus-within{
-  box-shadow:0 0 18px #689cff60,0 0 36px #9775ff35;
-}
-.home-dashboard .review-hub .hub-icon{background:linear-gradient(135deg,#6d9fff25,#ad83ff25)}
+.home-dashboard .review-hub>a{border-radius:11px;background:linear-gradient(115deg,#397bff12,transparent 65%)}
+.home-dashboard .review-hub .hub-tag{color:#82ecff;letter-spacing:.09em}
+.home-dashboard .review-hub .hub-icon{background:linear-gradient(135deg,#328bff45,#ad6aff45);color:#b6f6ff;box-shadow:0 0 16px #3cbdff35}
+.home-dashboard .review-hub .hub-arrow{color:#7feeff;font-size:1.3rem}
+.home-dashboard .review-hub:hover,.home-dashboard .review-hub:focus-within{border-width:3px;outline:2px solid #b5f7ff;outline-offset:4px}
+:root[data-theme="light"] .home-dashboard .review-hub .hub-tag{color:#2454b5}
+:root[data-theme="light"] .home-dashboard .review-hub .hub-icon{color:#2145a1}
+:root[data-theme="light"] .home-dashboard .review-hub .hub-arrow{color:#2454b5}
 @keyframes review-border-flow{to{--review-angle:360deg}}
-@keyframes review-glow{0%,100%{box-shadow:0 0 10px #6b99ff30,0 0 24px #9676ff18}50%{box-shadow:0 0 18px #6b99ff55,0 0 34px #9676ff30}}
-@media(prefers-reduced-motion:reduce){.home-dashboard .review-hub{animation:none}}
+@keyframes review-glow{0%,100%{box-shadow:0 0 8px #38dfff80,0 0 22px #438cff55,0 0 36px #9f62ff30}50%{box-shadow:0 0 12px #62ebffb0,0 0 30px #438cff85,0 0 52px #ad6bff55}}
+@media(prefers-reduced-motion:reduce){.home-dashboard .review-hub{animation:none;box-shadow:0 0 14px #438cff65,0 0 30px #9f62ff30}}
