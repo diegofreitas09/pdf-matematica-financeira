@@ -1,3 +1,4 @@
+import { announceReview } from '../../server/review-announcement.mjs';
 import webPush from "web-push";
 import { getStore } from "@netlify/blobs";
 
@@ -45,6 +46,8 @@ function dueAlerts(settings,today,hour) {
   return notifications.slice(0,5);
 }
 export default async () => {
+  try { console.log("Revisão push:", await announceReview()); }
+  catch (error) { console.warn("Aviso da revisão pendente:", error.message); }
   const publicKey=Netlify.env.get("VAPID_PUBLIC_KEY");
   const privateKey=Netlify.env.get("VAPID_PRIVATE_KEY");
   if(!publicKey || !privateKey){console.warn("Chaves VAPID ausentes.");return;}

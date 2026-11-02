@@ -30,3 +30,23 @@
   for = "/manifest.webmanifest"
   [headers.values]
     Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/revisao-avaliacao.json"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/revisao-avaliacao.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/revisao-avaliacao.css"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/revisao-avaliacao.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"

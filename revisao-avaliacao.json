@@ -1,7 +1,113 @@
 {
-  "titulo": "Revisão da Avaliação",
-  "descricao": "Prepare-se para a avaliação com questões, respostas e comentários.",
-  "publicada": false,
-  "atualizadaEm": "2026-10-26",
-  "questoes": []
+  "titulo": "Revisão de Matemática Financeira — 1ª série",
+  "descricao": "10 situações-problema sobre juros simples, compostos, taxas, prazos e descontos. Resolva antes de abrir os comentários.",
+  "publicada": true,
+  "atualizadaEm": "2026-11-02",
+  "publicacaoId": "revisao-1med-20261102",
+  "questoes": [
+    {
+      "id": "rev-20261102-1",
+      "enunciado": "Uma gráfica comprou papel por R$ 3.600,00 e combinou pagar a compra em uma única parcela 7 meses depois. O fornecedor cobra juros simples de 2,5% ao mês, sem outras taxas. Ao organizar o caixa, o gerente separou R$ 600,00 apenas para os encargos dessa compra. Esse valor será suficiente para pagar os juros? Justifique calculando quanto faltará ou sobrará.",
+      "assunto": "Juros simples",
+      "resposta": "Faltarão R$ 30,00.",
+      "comentario": "Dados: C = R$ 3.600,00; i = 2,5% ao mês = 0,025; t = 7 meses.\n\nNos juros simples: J = C × i × t.\n\nJ = 3.600 × 0,025 × 7 = R$ 630,00.\n\nDiferença em relação à reserva: 630 − 600 = R$ 30,00.\n\nResposta: o valor reservado não será suficiente; faltarão R$ 30,00.\n\nComentário: A pergunta pede quanto falta para pagar apenas os juros. Não é necessário acrescentar o capital inicial à reserva destinada aos encargos."
+    },
+    {
+      "id": "rev-20261102-2",
+      "enunciado": "Uma turma arrecadou R$ 6.000,00 para uma viagem. O orçamento contratado é de R$ 9.600,00 e permanecerá fixo. Sem fazer novos depósitos, a turma colocará toda a arrecadação em uma modalidade didática de rendimento simples de 3% ao mês. Depois de quantos meses completos o saldo alcançará exatamente o valor necessário para pagar a viagem?",
+      "assunto": "Prazo e meta financeira",
+      "resposta": "20 meses.",
+      "comentario": "Juros necessários: J = 9.600 − 6.000 = R$ 3.600,00.\n\nAplicando J = C × i × t: 3.600 = 6.000 × 0,03 × t.\n\n3.600 = 180t → t = 3.600/180 = 20 meses.\n\nResposta: 20 meses completos.\n\nComentário: A aplicação rende R$ 180,00 por mês. Como o regime é simples e não há novos depósitos, esse rendimento mensal permanece constante."
+    },
+    {
+      "id": "rev-20261102-3",
+      "enunciado": "Uma loja vende um computador por R$ 4.800,00 à vista ou por R$ 5.664,00 em uma parcela, vencível 9 meses após a compra. O acréscimo corresponde exclusivamente a juros simples sobre o preço à vista. Uma cliente afirma que a taxa cobrada é de 1% ao mês. Verifique se ela está correta e determine a taxa mensal efetivamente utilizada.",
+      "assunto": "Taxa mensal",
+      "resposta": "2% ao mês; a cliente está incorreta.",
+      "comentario": "J = 5.664 − 4.800 = R$ 864,00.\n\ni = J/(C × t) = 864/(4.800 × 9).\n\ni = 864/43.200 = 0,02 = 2% ao mês.\n\nResposta: a cliente está incorreta; a taxa cobrada é de 2% ao mês.\n\nComentário: O preço à vista é o capital inicial. A diferença entre o preço a prazo e o preço à vista corresponde aos juros. A taxa mensal deve ser calculada considerando os 9 meses."
+    },
+    {
+      "id": "rev-20261102-4",
+      "enunciado": "Dois fornecedores oferecem a uma oficina o mesmo equipamento de R$ 16.000,00, com pagamento único após 2 anos. O fornecedor Alfa cobra juros simples de 12% ao ano; o Beta cobra juros compostos à mesma taxa anual. A oficina escolherá o menor desembolso final. Qual fornecedor deve ser escolhido e qual será a economia em relação à outra proposta?",
+      "assunto": "Comparação entre regimes",
+      "resposta": "Fornecedor Alfa; economia de R$ 230,40.",
+      "comentario": "Alfa utiliza juros simples: MA = 16.000 × (1 + 0,12 × 2).\n\nMA = 16.000 × 1,24 = R$ 19.840,00.\n\nBeta utiliza juros compostos: MB = 16.000 × (1,12)².\n\nMB = 16.000 × 1,2544 = R$ 20.070,40.\n\nEconomia: 20.070,40 − 19.840 = R$ 230,40.\n\nResposta: escolher Alfa, com economia de R$ 230,40.\n\nComentário: Como se trata de uma compra, a proposta mais vantajosa é a de menor pagamento final. No regime composto, os juros do primeiro ano também geram juros no segundo."
+    },
+    {
+      "id": "rev-20261102-5",
+      "enunciado": "Um projeto cultural recebeu R$ 8.400,00 de uma instituição parceira, com devolução futura sob juros simples. O demonstrativo de encerramento registra R$ 3.528,00 de juros depois de 3 anos e 6 meses, sem qualquer outra cobrança. Para conferir o acordo, a coordenação precisa descobrir a taxa anual aplicada. Qual foi essa taxa?",
+      "assunto": "Taxa anual",
+      "resposta": "12% ao ano.",
+      "comentario": "O prazo de 3 anos e 6 meses equivale a 3,5 anos.\n\ni = J/(C × t) = 3.528/(8.400 × 3,5).\n\ni = 3.528/29.400 = 0,12 = 12% ao ano.\n\nResposta: 12% ao ano.\n\nComentário: O enunciado já informa os juros, e não o montante. Não é preciso subtrair o capital. Como a taxa solicitada é anual, o prazo deve ser usado em anos."
+    },
+    {
+      "id": "rev-20261102-6",
+      "enunciado": "Um fundo para restaurar uma biblioteca recebeu um único depósito de R$ 6.400,00. Em uma simulação, o saldo cresce 25% ao ano, em juros compostos, sem movimentações. O projeto só poderá começar quando o saldo alcançar R$ 12.500,00. Em qual aniversário do depósito esse valor será atingido?",
+      "alternativas": [
+        "No primeiro.",
+        "No segundo.",
+        "No terceiro.",
+        "No quarto.",
+        "No quinto."
+      ],
+      "assunto": "Prazo em juros compostos",
+      "resposta": "C",
+      "comentario": "Nos juros compostos: M = C × (1 + i)ᵗ.\n\n12.500 = 6.400 × (1,25)ᵗ.\n\nApós 1 ano: 6.400 × 1,25 = R$ 8.000,00.\n\nApós 2 anos: 8.000 × 1,25 = R$ 10.000,00.\n\nApós 3 anos: 10.000 × 1,25 = R$ 12.500,00.\n\nResposta: alternativa C — no terceiro aniversário do depósito.\n\nComentário: A cada ano, o saldo é multiplicado por 1,25. O rendimento anual em reais aumenta porque incide sobre um saldo maior. A evolução período a período resolve a questão sem logaritmos."
+    },
+    {
+      "id": "rev-20261102-7",
+      "enunciado": "Uma empresa reservou R$ 20.000,00 para substituir seus computadores. O dinheiro ficou aplicado por 2 anos a juros compostos de 8% ao ano. Ao final, a empresa retirou apenas o capital inicial e deixou todo o rendimento na conta para comprar acessórios. Qual valor ficou disponível para os acessórios?",
+      "alternativas": [
+        "R$ 23.328,00",
+        "R$ 1.728,00",
+        "R$ 3.200,00",
+        "R$ 3.328,00",
+        "R$ 1.600,00"
+      ],
+      "assunto": "Juros e montante",
+      "resposta": "D",
+      "comentario": "M = 20.000 × (1,08)² = 20.000 × 1,1664.\n\nM = R$ 23.328,00.\n\nApós retirar o capital inicial: J = 23.328 − 20.000 = R$ 3.328,00.\n\nResposta: alternativa D — R$ 3.328,00.\n\nComentário: O montante é o saldo total. Como a empresa retira os R$ 20.000,00 inicialmente aplicados, apenas os juros ficam disponíveis para os acessórios."
+    },
+    {
+      "id": "rev-20261102-8",
+      "enunciado": "Em um jogo de educação financeira, duas equipes começam com o mesmo saldo positivo. A equipe Azul recebe, a cada rodada, 6% do saldo inicial. A equipe Verde recebe 6% do saldo que possui no começo de cada rodada. Não há depósitos nem retiradas. Depois de 4 rodadas, qual conclusão é correta?",
+      "alternativas": [
+        "A equipe Azul terá saldo maior.",
+        "A equipe Verde terá saldo maior.",
+        "As equipes terão saldos iguais.",
+        "O saldo da Verde será exatamente o dobro do saldo da Azul."
+      ],
+      "assunto": "Juros simples e compostos",
+      "resposta": "B",
+      "comentario": "Seja C > 0 o saldo inicial de cada equipe.\n\nAzul recebe sempre sobre o saldo inicial: MA = C × (1 + 0,06 × 4) = 1,24C.\n\nVerde recebe sobre o saldo atualizado: MV = C × (1,06)⁴ = 1,26247696C.\n\nComo 1,26247696C > 1,24C, a equipe Verde termina com o maior saldo.\n\nResposta: alternativa B.\n\nComentário: Azul segue o regime de juros simples e Verde, o de juros compostos. As equipes terminam a primeira rodada empatadas. A partir da segunda, Verde recebe juros também sobre os rendimentos acumulados."
+    },
+    {
+      "id": "rev-20261102-9",
+      "enunciado": "Uma escola deve pagar R$ 15.000,00 pela compra de instrumentos musicais e poderá adiar o pagamento por 2 meses. O fornecedor oferece dois contratos: no plano A, cobra juros simples de 2% ao mês; no plano B, cobra juros compostos de 1,9% ao mês. Não há outras despesas. Qual plano a escola deve escolher para pagar menos e qual será a economia aproximada?",
+      "alternativas": [
+        "Plano A, com economia de R$ 24,59.",
+        "Plano B, com economia de R$ 30,00.",
+        "Plano A, com economia de R$ 5,42.",
+        "Os dois planos terão o mesmo custo.",
+        "Plano B, com economia de R$ 24,59."
+      ],
+      "assunto": "Comparação de pagamentos",
+      "resposta": "E",
+      "comentario": "Plano A: MA = 15.000 × (1 + 0,02 × 2) = R$ 15.600,00.\n\nPlano B: MB = 15.000 × (1,019)² = 15.000 × 1,038361.\n\nMB = R$ 15.575,415, antes do arredondamento.\n\nEconomia: 15.600 − 15.575,415 = R$ 24,585 ≈ R$ 24,59.\n\nResposta: alternativa E — plano B, com economia aproximada de R$ 24,59.\n\nComentário: Como as taxas são diferentes, o regime composto não determina, sozinho, qual opção terá maior custo. Mantenha a precisão nos cálculos intermediários e arredonde a diferença final para centavos, conforme a orientação da revisão."
+    },
+    {
+      "id": "rev-20261102-10",
+      "enunciado": "Uma fabricante oferece uma máquina por R$ 50.000,00, com pagamento único após 3 anos e juros simples de 10% ao ano. Em uma campanha, quem pagar ao final do 1º ano receberá abatimento de 12% sobre o valor total originalmente previsto para o final do contrato. Um comprador já reservou R$ 55.000,00 para usar a campanha. Quanto ainda precisará acrescentar para realizar o pagamento antecipado?",
+      "alternativas": [
+        "R$ 2.200,00",
+        "R$ 7.200,00",
+        "R$ 10.000,00",
+        "R$ 1.000,00",
+        "R$ 5.000,00"
+      ],
+      "assunto": "Juros simples e desconto",
+      "resposta": "A",
+      "comentario": "O desconto incide sobre o montante previsto para o final dos 3 anos.\n\nM = 50.000 × (1 + 0,10 × 3) = R$ 65.000,00.\n\nApós o abatimento de 12%: V = 65.000 × (1 − 0,12).\n\nV = 65.000 × 0,88 = R$ 57.200,00.\n\nComo já há R$ 55.000,00 reservados: 57.200 − 55.000 = R$ 2.200,00.\n\nResposta: alternativa A — será necessário acrescentar R$ 2.200,00.\n\nComentário: O primeiro ano indica quando ocorre a quitação antecipada. Pela regra expressa no enunciado, a base do desconto é o montante originalmente previsto para o terceiro ano. A pergunta solicita a quantia adicional, e não o pagamento total."
+    }
+  ]
 }

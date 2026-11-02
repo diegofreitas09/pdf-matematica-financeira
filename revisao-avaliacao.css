@@ -106,3 +106,8 @@
  .pdf-review-entry[data-state="published"] .pdf-review-entry-icon,
  .pdf-review-entry[data-state="published"] .pdf-review-entry-link::after { animation: none !important; }
 }
+
+.pdf-review-downloads{margin:1.5rem 0;padding:1.5rem;border:1px solid var(--border, #73739a);border-radius:1rem;background:var(--card,transparent)}
+.pdf-review-download-actions{display:flex;flex-wrap:wrap;gap:1rem;margin:1rem 0}
+.pdf-review-download-actions a{text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+.pdf-review-solution p{white-space:pre-line}
