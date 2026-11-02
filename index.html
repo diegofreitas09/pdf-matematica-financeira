@@ -31,6 +31,7 @@
   <link rel="stylesheet" href="experience.css">
   <link rel="stylesheet" href="revisao-avaliacao.css">
   <link rel="stylesheet" href="voice-lookup.css">
+
   <script src="script.js" defer></script>
   <script src="experience.js" defer></script>
   <script src="install.js" defer></script>
@@ -84,8 +85,9 @@
     @media(prefers-reduced-motion:reduce){.pdf-exam-entry-icon{animation:none}.pdf-exam-entry-link{transition:none}}
 
   </style>
+  <link rel="stylesheet" href="home-layout.css?v=28">
 </head>
-<body>
+<body class="home-dashboard">
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
   <div id="page-root">
     <header class="floating-header">
@@ -95,8 +97,8 @@
           <span class="brand-name">PDF <strong>Financeira</strong></span>
         </a>
         <nav class="nav-links" aria-label="Navegação principal">
-          <a class="nav-link" href="#trilha">Trilha</a>
-          <a class="nav-link" href="./financeiro.html">Financeiro PRO</a>
+          <a class="nav-link" href="#estudar">Estudar</a><a class="nav-link" href="#trilha">Trilha</a>
+          <a class="nav-link" href="#ferramentas">Ferramentas</a>
           <button class="nav-link" type="button" data-route="arena">Arena</button>
         </nav>
         <div class="nav-stats" aria-label="Seu desempenho">
@@ -113,80 +115,20 @@
     <main id="conteudo">
       <section class="hero container" id="inicio" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow"><span class="online-dot" aria-hidden="true"></span> PREPARATÓRIO DIEGO FREITAS · TEMPORADA 01</p>
-          <h1 id="hero-title">Domine <span class="gradient-text">Logaritmos.</span><br>Conquiste o <span class="gradient-text">Futuro.</span></h1>
-          <p class="hero-description">Transforme cada questão em uma conquista. Avance pelos mundos, aprenda com seus erros e use a matemática para dominar o dinheiro.</p>
-
-          <section class="pdf-exam-entry" aria-label="Agenda de vestibulares e lembretes">
-            <a class="pdf-exam-entry-link" href="./vestibulares.html">
-              <span class="pdf-exam-entry-icon" aria-hidden="true">📆</span>
-              <span class="pdf-exam-entry-copy"><span class="pdf-exam-entry-tag">✦ AGENDA DE PROVAS</span><strong>Vestibulares e Alertas de Estudo</strong><span>ENEM, UECE, Unichristus e Unifor. Monte seu cronograma e receba lembretes antes das provas.</span><em>Ver datas e programar →</em></span>
-            </a>
-          </section>
-          <section class="pdf-flash-entry" aria-label="Flashcards de Matemática Financeira">
-            <a class="pdf-flash-link" href="./flashcards.html" aria-label="Abrir flashcards de Matemática Financeira">
-              <span class="pdf-flash-icon" aria-hidden="true">
-                <svg viewBox="0 0 64 64" width="66" height="66" fill="none"><rect x="18" y="8" width="35" height="43" rx="6" stroke="currentColor" stroke-width="3" opacity=".6" transform="rotate(10 18 8)"></rect><rect x="10" y="13" width="39" height="45" rx="7" fill="#FFF0F8" stroke="currentColor" stroke-width="3"></rect><path d="M22 30c.4-6 15-7 15 1 0 5-7 5-7 10" stroke="#C6297E" stroke-width="3.5" stroke-linecap="round"></path><circle cx="30" cy="47" r="2.5" fill="#C6297E"></circle></svg>
-              </span>
-              <span class="pdf-flash-copy">
-                <span class="pdf-flash-kicker">✦ NOVO · REVISÃO INTERATIVA</span>
-                <strong>Flashcards de Matemática Financeira</strong>
-                <span>56 cartões de perguntas e respostas • 7 assuntos • aprenda e revise no seu ritmo.</span>
-                <span class="pdf-flash-cta">Abrir meus flashcards <span aria-hidden="true">→</span></span>
-              </span>
-            </a>
-          </section>
-          <section class="pdf-voice-entry" id="pdf-voice-entry" aria-labelledby="pdf-voice-title">
-            <button type="button" class="pdf-voice-mic" id="pdf-voice-trigger" aria-label="Dizer código da questão pelo microfone" aria-pressed="false" title="Consultar questão por voz">
-              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="2" width="6" height="13" rx="3"></rect><path d="M5 10a7 7 0 0 0 14 0M12 17v5M8 22h8"></path></svg>
-            </button>
-            <div class="pdf-voice-copy">
-              <span class="pdf-voice-kicker">✦ BUSCA INTELIGENTE POR VOZ</span>
-              <h2 id="pdf-voice-title">Diga o código. Encontre a questão.</h2>
-              <p>Toque no microfone lilás e diga, por exemplo, “questão vinte e sete”. O gabarito e a explicação aparecem na consulta.</p>
-              <form class="pdf-voice-form" id="pdf-voice-form">
-                <label class="visually-hidden" for="pdf-voice-code">Código da questão</label>
-                <input class="pdf-voice-input" id="pdf-voice-code" type="text" placeholder="Ex.: PDF-MF-0027" autocomplete="off" spellcheck="false" inputmode="text" maxlength="28">
-                <button class="pdf-voice-submit" type="submit">Consultar questão</button>
-              </form>
-              <p class="pdf-voice-status" id="pdf-voice-status" role="status" aria-live="polite">Diga o código pelo microfone ou digite.</p>
-            </div>
-          </section>
-          <section class="pdf-review-entry" id="pdf-review-entry" data-state="draft" aria-label="Revisão da avaliação">
-            <a class="pdf-review-entry-link" href="./revisao-avaliacao.html" aria-label="Abrir o espaço da revisão da avaliação, em preparação">
-              <span class="pdf-review-entry-icon" aria-hidden="true">✍️</span>
-              <span class="pdf-review-entry-copy">
-                <span class="pdf-review-entry-tag" id="pdf-review-entry-tag">✎ ESPAÇO DE REVISÃO</span>
-                <strong class="pdf-review-entry-title">Revisão da Avaliação</strong>
-                <span class="pdf-review-entry-description" id="pdf-review-entry-description">Estamos preparando as questões da próxima avaliação.</span>
-              </span>
-              <span class="pdf-review-entry-arrow" aria-hidden="true">→</span>
-            </a>
-          </section>
-          <div class="install-banner" aria-label="Instale o aplicativo no celular"><div><h2>📲 Leve a PDF Financeira no bolso</h2><p>Instale no Android ou iPhone e estude pelo ícone na tela inicial.</p></div><button type="button" class="install-launch" data-open-install>Instalar aplicativo</button></div>
-          <p><a href="./study-reminders.html" class="button button-primary">⏰ Programar meus horários de estudo</a></p>
-          <div class="hero-actions">
-            <a href="#trilha" class="button button-primary">Começar Jornada <span aria-hidden="true">→</span></a>
-            <button class="button button-outline" type="button" data-route="caderno">Meu caderno de erros</button>
-          </div>
-          <p class="hero-footnote">110 desafios autorais em 8 mundos · Seu progresso continua salvo neste aparelho.</p>
+          <p class="eyebrow">PDF SOLUÇÃO EDUCACIONAL</p>
+          <h1 id="hero-title">Seu espaço para aprender<br><span class="gradient-text">Matemática Financeira.</span></h1>
+          <p class="hero-description">Revise os conteúdos, pratique questões e acompanhe sua evolução. Escolha por onde começar.</p>
+          <div class="hero-actions"><a class="button button-primary" href="./revisao-avaliacao.html">Abrir revisão</a><a class="button button-outline" href="#trilha">Continuar minha trilha</a></div>
         </div>
-        <div class="hero-art" aria-hidden="true">
-          <div class="aurora-orbit orbit-one"></div>
-          <div class="aurora-orbit orbit-two"></div>
-          <div class="mascot" role="presentation">📈</div>
-          <div class="art-tile art-tile-top"><span>+20 XP</span><small>Missão concluída</small></div>
-          <div class="art-tile art-tile-bottom"><span>↗ Evolução</span><small>Um desafio por vez</small></div>
-          <div class="mini-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-        </div>
+        <aside class="hero-note"><span class="hub-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h6a3 3 0 0 1 3 3v14a4 4 0 0 0-4-3H4z M20 4h-4a3 3 0 0 0-3 3"/></svg></span><strong>Um passo de cada vez</strong><p>Estude a teoria, resolva sem consultar e confira os comentários depois.</p><a href="./uece-financeira.html">Começar um treino UECE →</a></aside>
       </section>
-
       <section class="overview container" aria-label="Resumo da sua jornada">
         <div class="overview-item"><span class="overview-icon" aria-hidden="true">◈</span><div><strong id="level-value">1</strong><small>Seu nível</small></div></div>
         <div class="overview-item"><span class="overview-icon" aria-hidden="true">✓</span><div><strong id="completed-value">0 <span class="minor">/ 110</span></strong><small>Questões dominadas</small></div></div>
         <div class="overview-item"><span class="overview-icon" aria-hidden="true">◎</span><div><strong id="accuracy-value">0%</strong><small>Precisão das respostas</small></div></div>
       </section>
 
+      <section class="study-hub container" id="estudar" aria-labelledby="study-title"><div class="section-heading"><div><p class="eyebrow">SEU PRÓXIMO PASSO</p><h2 id="study-title">Estudar e praticar</h2><p>Revisão, memorização e treino em um só lugar.</p></div></div><div class="hub-grid"><div class="hub-card review-hub" id="pdf-review-entry" data-state="published"><a href="./revisao-avaliacao.html"><span class="hub-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h6a3 3 0 0 1 3 3v14a4 4 0 0 0-4-3H4z M20 4h-4a3 3 0 0 0-3 3"/></svg></span><span class="hub-copy"><span class="hub-tag" id="pdf-review-entry-tag">REVISÃO DISPONÍVEL</span><strong>Revisão da avaliação</strong><small id="pdf-review-entry-description">10 questões com respostas comentadas.</small></span><span class="hub-arrow" aria-hidden="true">↗</span></a></div><a class="hub-card" href="./uece-financeira.html"><span class="hub-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-9-9 M21 3l-9 9 M16 3h5v5"/></svg></span><span class="hub-copy"><strong>Questões UECE</strong><small>23 questões de provas anteriores. Cada acesso inicia um novo treino.</small></span><span class="hub-arrow" aria-hidden="true">↗</span></a><a class="hub-card" href="./flashcards.html"><span class="hub-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h13v14H7z M4 17V3h13"/></svg></span><span class="hub-copy"><strong>Flashcards</strong><small>56 cartões para revisar os conceitos de 7 assuntos.</small></span><span class="hub-arrow" aria-hidden="true">↗</span></a><button class="hub-card" type="button" data-route="arena"><span class="hub-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h7v7H3z M14 3h7v7h-7z M3 14h7v7H3z M14 14h7v7h-7z"/></svg></span><span class="hub-copy"><strong>Arena de simulados</strong><small>Pratique nos formatos ENEM, UECE e concursos.</small></span><span class="hub-arrow" aria-hidden="true">↗</span></button></div></section>
       <section class="pathway container" id="trilha" aria-labelledby="path-title">
         <div class="section-heading">
           <div>
@@ -228,22 +170,27 @@
             <button class="button button-card" type="button" data-enter="3" disabled>Bloqueado <span aria-hidden="true">🔒</span></button>
           </article>
         </div>
-        <p class="path-note">Os outros cinco mundos, simulados e aulas continuam disponíveis no aplicativo completo.</p>
+        <p class="path-note">Acesse os 8 mundos pelo botão acima.</p>
       </section>
 
-      <section class="quick-section container" aria-labelledby="shortcuts-title">
-        <div class="section-heading"><div><p class="eyebrow">APRENDA DO SEU JEITO</p><h2 id="shortcuts-title">Escolha sua próxima missão</h2></div></div>
-        <div class="quick-grid">
-          <a class="quick-card" href="./vestibulares.html"><span class="quick-icon" aria-hidden="true" style="background:#f6ad5c21;color:#fac779">📆</span><span><strong>Vestibulares e Agenda de Estudos</strong><small>Calendário oficial, notificações de prova e sessões de revisão.</small></span><span class="quick-arrow" aria-hidden="true">→</span></a>
-          <a class="quick-card" href="./flashcards.html"><span class="quick-icon" aria-hidden="true" style="background:#ec489924;color:#ff80bd">✦</span><span><strong>Flashcards Financeiros</strong><small>56 cartões de perguntas e respostas sobre 7 assuntos, com revisão e progresso.</small></span><span class="quick-arrow" aria-hidden="true">→</span></a>
-          <a class="quick-card" href="./financeiro.html"><span class="quick-icon" aria-hidden="true">R$</span><span><strong>Central Financeira PRO</strong><small>Calculadoras, financiamento, Price, SAC e amortização antecipada.</small></span><span class="quick-arrow" aria-hidden="true">→</span></a>
-          <button class="quick-card" type="button" data-route="simulador"><span class="quick-icon" aria-hidden="true">↗</span><span><strong>Laboratório financeiro</strong><small>Simule juros compostos e metas de investimento.</small></span><span class="quick-arrow" aria-hidden="true">→</span></button>
-          <button class="quick-card" type="button" data-route="biblioteca"><span class="quick-icon" aria-hidden="true">📄</span><span><strong>Desafios em PDF</strong><small>Baixe os exercícios organizados por assunto e nível. PDF com ou sem gabarito.</small></span><span class="quick-arrow" aria-hidden="true">→</span></button>
-          <button class="quick-card" type="button" data-route="arena"><span class="quick-icon" aria-hidden="true">★</span><span><strong>Arena de simulados</strong><small>Treine nos formatos ENEM, UECE e concursos.</small></span><span class="quick-arrow" aria-hidden="true">→</span></button>
-          <a class="quick-card" href="uece-financeira.html"><span class="quick-icon" aria-hidden="true">∑</span><span><strong>Questões UECE · Matemática Financeira</strong><small>23 questões de porcentagem, juros e aplicações, com gabarito.</small></span><span class="quick-arrow" aria-hidden="true">→</span></a>
-          <button class="quick-card" type="button" data-route="biblioteca"><span class="quick-icon" aria-hidden="true">#</span><span><strong>Biblioteca de questões</strong><small>Consulte por ID, imprima ou exporte.</small></span><span class="quick-arrow" aria-hidden="true">→</span></button>
-          <button class="quick-card" type="button" data-route="professor"><span class="quick-icon" aria-hidden="true">▥</span><span><strong>Meu desempenho</strong><small>Veja os assuntos que precisam de revisão.</small></span><span class="quick-arrow" aria-hidden="true">→</span></button>
-        </div>
+      <section class="tools-hub container" id="ferramentas" aria-labelledby="tools-title"><div class="section-heading"><div><p class="eyebrow">APOIO À SUA ROTINA</p><h2 id="tools-title">Ferramentas e organização</h2></div></div><div class="hub-grid tools-grid"><a class="hub-card" href="./financeiro.html"><span class="hub-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h14v18H5z M8 6h8 M8 11h1 M15 11h1 M8 16h1 M15 16h1"/></svg></span><span class="hub-copy"><strong>Financeiro PRO</strong><small>Calculadoras, Price, SAC e amortização.</small></span><span class="hub-arrow" aria-hidden="true">↗</span></a><button class="hub-card" type="button" data-route="simulador"><span class="hub-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 3v18h17 M8 16v-4 M13 16V8 M18 16V5"/></svg></span><span class="hub-copy"><strong>Laboratório financeiro</strong><small>Simule juros compostos e metas.</small></span><span class="hub-arrow" aria-hidden="true">↗</span></button><a class="hub-card" href="./vestibulares.html"><span class="hub-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v16H4z M4 10h16 M8 3v4 M16 3v4"/></svg></span><span class="hub-copy"><strong>Agenda de vestibulares</strong><small>Datas de provas e avisos no celular.</small></span><span class="hub-arrow" aria-hidden="true">↗</span></a><a class="hub-card" href="./study-reminders.html"><span class="hub-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8v5l3 2 M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0"/></svg></span><span class="hub-copy"><strong>Horários de estudo</strong><small>Organize os seus lembretes de revisão.</small></span><span class="hub-arrow" aria-hidden="true">↗</span></a><button class="hub-card" type="button" data-route="biblioteca"><span class="hub-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h6a3 3 0 0 1 3 3v14a4 4 0 0 0-4-3H4z M20 4h-4a3 3 0 0 0-3 3"/></svg></span><span class="hub-copy"><strong>Questões e PDFs</strong><small>Busque exercícios e baixe listas por assunto.</small></span><span class="hub-arrow" aria-hidden="true">↗</span></button><button class="hub-card" type="button" data-route="caderno"><span class="hub-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h13v14H7z M4 17V3h13"/></svg></span><span class="hub-copy"><strong>Caderno de erros</strong><small>Retome as questões que precisam de atenção.</small></span><span class="hub-arrow" aria-hidden="true">↗</span></button><button class="hub-card" type="button" data-route="professor"><span class="hub-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 3v18h17 M8 16v-4 M13 16V8 M18 16V5"/></svg></span><span class="hub-copy"><strong>Meu desempenho</strong><small>Acompanhe seus resultados e dificuldades.</small></span><span class="hub-arrow" aria-hidden="true">↗</span></button></div>
+        <details class="voice-disclosure"><summary>Consultar uma questão por código ou voz</summary>          <section class="pdf-voice-entry" id="pdf-voice-entry" aria-labelledby="pdf-voice-title">
+            <button type="button" class="pdf-voice-mic" id="pdf-voice-trigger" aria-label="Dizer código da questão pelo microfone" aria-pressed="false" title="Consultar questão por voz">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="2" width="6" height="13" rx="3"></rect><path d="M5 10a7 7 0 0 0 14 0M12 17v5M8 22h8"></path></svg>
+            </button>
+            <div class="pdf-voice-copy">
+              <span class="pdf-voice-kicker">✦ BUSCA INTELIGENTE POR VOZ</span>
+              <h2 id="pdf-voice-title">Diga o código. Encontre a questão.</h2>
+              <p>Toque no microfone lilás e diga, por exemplo, “questão vinte e sete”. O gabarito e a explicação aparecem na consulta.</p>
+              <form class="pdf-voice-form" id="pdf-voice-form">
+                <label class="visually-hidden" for="pdf-voice-code">Código da questão</label>
+                <input class="pdf-voice-input" id="pdf-voice-code" type="text" placeholder="Ex.: PDF-MF-0027" autocomplete="off" spellcheck="false" inputmode="text" maxlength="28">
+                <button class="pdf-voice-submit" type="submit">Consultar questão</button>
+              </form>
+              <p class="pdf-voice-status" id="pdf-voice-status" role="status" aria-live="polite">Diga o código pelo microfone ou digite.</p>
+            </div>
+          </section></details>
+        <div class="install-banner"><div><h2>Estude também pelo aplicativo</h2><p>Instale no celular para acessar seus materiais com facilidade.</p></div><button class="install-launch" type="button" data-open-install>Instalar aplicativo</button></div>
       </section>
     </main>
 
