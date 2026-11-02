@@ -17,7 +17,8 @@
   </script>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="revisao-avaliacao.css">
-  <script src="revisao-avaliacao.js?v=30" defer></script>
+  <script src="review-training.js?v=31" defer></script>
+  <script src="revisao-avaliacao.js?v=31" defer></script>
 </head>
 <body>
   <a href="#pdf-review-page" class="skip-link">Pular para a revisão</a>
@@ -32,14 +33,24 @@
       <p id="pdf-review-page-description">Prepare-se para a avaliação com questões, respostas e comentários.</p>
       <span class="pdf-review-status" id="pdf-review-page-status">Verificando a revisão...</span>
     </section>
-    <nav class="pdf-review-download-actions" aria-label="Escolha a série" style="margin-bottom:24px"><a class="pdf-review-action" data-review-series="1" href="?serie=1">1ª série · 10 questões</a><a class="pdf-review-action" data-review-series="2" href="?serie=2">2ª série · 5 questões</a></nav>
+    <nav class="pdf-review-download-actions" aria-label="Escolha a série" style="margin-bottom:24px"><a class="pdf-review-action" data-review-series="1" href="?serie=1">1ª série · 30 no banco</a><a class="pdf-review-action" data-review-series="2" href="?serie=2">2ª série · 30 no banco</a></nav>
+    <section class="pdf-review-downloads" id="review-training-panel" aria-labelledby="review-training-title" hidden>
+      <h2 id="review-training-title">Mais opções para treinar</h2>
+      <p>A plataforma monta um treino do nível da sua série, distribuindo os assuntos e embaralhando as questões. Cada treino começa sem marcações e com comentários fechados.</p>
+      <div class="pdf-review-download-actions">
+        <label for="review-training-count">Questões por treino <select id="review-training-count"><option value="5">5 questões</option><option value="10">10 questões</option><option value="15">15 questões</option><option value="30">Banco completo · 30 questões</option></select></label>
+        <button class="pdf-review-action" type="button" id="review-generate" disabled>Montar novo treino</button>
+        <button class="pdf-review-action" type="button" id="review-original">Voltar à revisão original</button>
+      </div>
+      <p id="review-training-status" role="status">Carregando o banco de questões...</p>
+    </section>
     <section class="pdf-review-downloads" aria-label="Materiais para baixar">
       <h2>Material de revisão</h2>
-      <p>Estude no aplicativo ou baixe os arquivos para editar e imprimir.</p>
+      <p>Os arquivos abaixo contêm a revisão original. Os treinos extras ficam disponíveis no aplicativo.</p>
       <div class="pdf-review-download-actions">
-        <a data-review-download class="pdf-review-action" href="./materiais/revisao-financeira-1med.docx" download>Baixar revisão em Word</a>
+        <a data-review-download class="pdf-review-action" href="./materiais/revisao-financeira-1med.docx" download>Baixar revisão original em Word</a>
         <a data-review-download class="pdf-review-action" href="./materiais/gabarito-comentado-financeira-1med.docx" download>Baixar gabarito comentado em Word</a>
-        <a id="review-download-2" class="pdf-review-action" href="./materiais/revisao-financeira-2med.docx" download hidden>Baixar revisão da 2ª série em Word</a>
+        <a id="review-download-2" class="pdf-review-action" href="./materiais/revisao-financeira-2med.docx" download hidden>Baixar revisão original da 2ª série em Word</a>
       </div>
       <p>Para receber avisos no celular, <a href="./vestibulares.html#va-activate">ative as notificações</a>. A instalação do app, sozinha, não autoriza os alertas.</p>
     </section>

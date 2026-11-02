@@ -1,7 +1,7 @@
 /* PDF Financeira — cache versionado, navegação offline correta e atualização segura. */
-const CACHE='pdf-financeira-review-series-v30';
+const CACHE='pdf-financeira-review-training-v31';
 const PREFIX='pdf-financeira-';
-const ASSETS=['./home-layout.css','./','./index.html','./vestibulares.html','./vestibulares.css','./vestibulares.js','./flashcards.html','./flashcards.css','./flashcards.js','./style.css','./script.js','./plataforma.html','./financeiro.html','./calculator-pro.js','./uece-financeira.html','./experience.js','./install.js','./study-reminders.html','./study-reminders.js','./experience.css','./revisao-avaliacao.html','./revisao-avaliacao.css','./revisao-avaliacao.js','./revisao-avaliacao.json','./revisao-2serie.json','./voice-lookup.js','./voice-lookup.css','./desafios-pdf.js','./desafios-pdf.css','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
+const ASSETS=['./home-layout.css','./','./index.html','./vestibulares.html','./vestibulares.css','./vestibulares.js','./flashcards.html','./flashcards.css','./flashcards.js','./style.css','./script.js','./plataforma.html','./financeiro.html','./calculator-pro.js','./uece-financeira.html','./experience.js','./install.js','./study-reminders.html','./study-reminders.js','./experience.css','./revisao-avaliacao.html','./revisao-avaliacao.css','./revisao-avaliacao.js','./revisao-avaliacao.json','./revisao-2serie.json','./review-training.js','./treino-1serie.json','./treino-2serie.json','./voice-lookup.js','./voice-lookup.css','./desafios-pdf.js','./desafios-pdf.css','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting()));
 });
@@ -17,7 +17,7 @@ self.addEventListener('fetch',event=>{
     const isPage=request.mode==='navigate'||url.pathname.endsWith('.html')||url.pathname.endsWith('/');
     const cached=await cache.match(request,{ignoreSearch:true});
     // Páginas usam rede primeiro para receber correções; recursos estáticos, cache primeiro.
-    const isReviewData=(url.pathname.endsWith('/revisao-avaliacao.json')||url.pathname.endsWith('/revisao-2serie.json'));
+    const isReviewData=(url.pathname.endsWith('/revisao-avaliacao.json')||url.pathname.endsWith('/revisao-2serie.json')||/\/treino-[12]serie\.json$/.test(url.pathname));
     if(!isPage&&!isReviewData&&cached)return cached;
     try{
       const response=await fetch(request);

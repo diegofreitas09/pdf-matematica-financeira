@@ -1,0 +1,263 @@
+{
+  "serie": 1,
+  "questoes": [
+    {
+      "id": "treino-1med-001",
+      "grupo": "simples",
+      "assunto": "Juros simples",
+      "enunciado": "Uma cooperativa de costureiras antecipou a compra de tecidos. O capital de R$ 2.800,00 ficou sujeito a juros simples de 1,5% ao mês por 8 meses. Qual é o valor apenas dos juros nesse período?",
+      "resposta": "R$ 336,00",
+      "comentario": "J = C × i × t. Convertendo a taxa: 1,5% = 0,015.\n\nJ = 2800 × 0,015 × 8 = R$ 336,00. O montante seria R$ 3.136,00, mas a pergunta solicita somente os juros."
+    },
+    {
+      "id": "treino-1med-002",
+      "grupo": "simples",
+      "assunto": "Juros simples",
+      "enunciado": "Um laboratório escolar reservou recursos para comprar sensores. O capital de R$ 4.500,00 ficou sujeito a juros simples de 2% ao mês por 6 meses. Qual é o valor apenas dos juros nesse período?",
+      "resposta": "R$ 540,00",
+      "comentario": "J = C × i × t. Convertendo a taxa: 2% = 0,02.\n\nJ = 4500 × 0,02 × 6 = R$ 540,00. O montante seria R$ 5.040,00, mas a pergunta solicita somente os juros."
+    },
+    {
+      "id": "treino-1med-003",
+      "grupo": "simples",
+      "assunto": "Juros simples",
+      "enunciado": "Uma produtora de podcasts aplicou a receita de um patrocínio. O capital de R$ 3.600,00 ficou sujeito a juros simples de 1,25% ao mês por 10 meses. Qual é o valor apenas dos juros nesse período?",
+      "resposta": "A",
+      "comentario": "J = C × i × t. Convertendo a taxa: 1,25% = 0,0125.\n\nJ = 3600 × 0,0125 × 10 = R$ 450,00. O montante seria R$ 4.050,00, mas a pergunta solicita somente os juros.\n\nResposta: R$ 450,00.",
+      "alternativas": [
+        "R$ 450,00",
+        "R$ 495,00",
+        "R$ 540,00",
+        "R$ 360,00",
+        "R$ 405,00"
+      ]
+    },
+    {
+      "id": "treino-1med-004",
+      "grupo": "simples",
+      "assunto": "Juros simples",
+      "enunciado": "Um viveiro de mudas deixou sua reserva em uma aplicação. O capital de R$ 7.500,00 ficou sujeito a juros simples de 0,8% ao mês por 15 meses. Qual é o valor apenas dos juros nesse período?",
+      "resposta": "E",
+      "comentario": "J = C × i × t. Convertendo a taxa: 0,8% = 0,008.\n\nJ = 7500 × 0,008 × 15 = R$ 900,00. O montante seria R$ 8.400,00, mas a pergunta solicita somente os juros.\n\nResposta: R$ 900,00.",
+      "alternativas": [
+        "R$ 990,00",
+        "R$ 1.080,00",
+        "R$ 720,00",
+        "R$ 810,00",
+        "R$ 900,00"
+      ]
+    },
+    {
+      "id": "treino-1med-005",
+      "grupo": "taxas",
+      "assunto": "Taxa de juros simples",
+      "enunciado": "Uma oficina de bicicletas tomou R$ 4.200,00 para custear um projeto e devolveu R$ 4.956,00 após 10 meses. O contrato previa apenas juros simples. Determine a taxa mensal cobrada.",
+      "resposta": "1,8% ao mês",
+      "comentario": "J = M − C = R$ 4.956,00 − R$ 4.200,00 = R$ 756,00.\n\ni = J/(C × t) = 756/(4200 × 10) = 0,018. Em porcentagem: 1,8% ao mês. A taxa é mensal porque o prazo foi usado em meses."
+    },
+    {
+      "id": "treino-1med-006",
+      "grupo": "taxas",
+      "assunto": "Taxa de juros simples",
+      "enunciado": "Uma feira de artesanato tomou R$ 6.500,00 para custear um projeto e devolveu R$ 7.670,00 após 15 meses. O contrato previa apenas juros simples. Determine a taxa mensal cobrada.",
+      "resposta": "1,2% ao mês",
+      "comentario": "J = M − C = R$ 7.670,00 − R$ 6.500,00 = R$ 1.170,00.\n\ni = J/(C × t) = 1170/(6500 × 15) = 0,012. Em porcentagem: 1,2% ao mês. A taxa é mensal porque o prazo foi usado em meses."
+    },
+    {
+      "id": "treino-1med-007",
+      "grupo": "taxas",
+      "assunto": "Taxa de juros simples",
+      "enunciado": "Um estúdio de animação tomou R$ 8.000,00 para custear um projeto e devolveu R$ 9.600,00 após 8 meses. O contrato previa apenas juros simples. Determine a taxa mensal cobrada.",
+      "resposta": "2,5% ao mês",
+      "comentario": "J = M − C = R$ 9.600,00 − R$ 8.000,00 = R$ 1.600,00.\n\ni = J/(C × t) = 1600/(8000 × 8) = 0,025. Em porcentagem: 2,5% ao mês. A taxa é mensal porque o prazo foi usado em meses."
+    },
+    {
+      "id": "treino-1med-008",
+      "grupo": "taxas",
+      "assunto": "Taxa de juros simples",
+      "enunciado": "Um clube de leitura tomou R$ 3.000,00 para custear um projeto e devolveu R$ 3.960,00 após 20 meses. O contrato previa apenas juros simples. Determine a taxa mensal cobrada.",
+      "resposta": "1,6% ao mês",
+      "comentario": "J = M − C = R$ 3.960,00 − R$ 3.000,00 = R$ 960,00.\n\ni = J/(C × t) = 960/(3000 × 20) = 0,016. Em porcentagem: 1,6% ao mês. A taxa é mensal porque o prazo foi usado em meses."
+    },
+    {
+      "id": "treino-1med-009",
+      "grupo": "compostos",
+      "assunto": "Rendimento composto",
+      "enunciado": "Uma equipe de teatro fez um único depósito de R$ 4.000,00, que rendeu juros compostos de 10% ao ano durante 3 anos, sem movimentações. Ao final, retirou o capital inicial e manteve apenas os juros na conta. Quanto permaneceu?",
+      "resposta": "E",
+      "comentario": "M = C × (1 + i)ᵗ = 4000 × (1,1)^3 = R$ 5.324,00.\n\nJ = M − C = R$ 5.324,00 − R$ 4.000,00 = R$ 1.324,00. Nos juros compostos, o saldo de cada ano incorpora os juros anteriores.\n\nResposta: R$ 1.324,00.",
+      "alternativas": [
+        "R$ 1.456,40",
+        "R$ 1.588,80",
+        "R$ 1.059,20",
+        "R$ 1.191,60",
+        "R$ 1.324,00"
+      ]
+    },
+    {
+      "id": "treino-1med-010",
+      "grupo": "compostos",
+      "assunto": "Rendimento composto",
+      "enunciado": "Um projeto de horta urbana fez um único depósito de R$ 6.000,00, que rendeu juros compostos de 5% ao ano durante 2 anos, sem movimentações. Ao final, retirou o capital inicial e manteve apenas os juros na conta. Quanto permaneceu?",
+      "resposta": "D",
+      "comentario": "M = C × (1 + i)ᵗ = 6000 × (1,05)^2 = R$ 6.615,00.\n\nJ = M − C = R$ 6.615,00 − R$ 6.000,00 = R$ 615,00. Nos juros compostos, o saldo de cada ano incorpora os juros anteriores.\n\nResposta: R$ 615,00.",
+      "alternativas": [
+        "R$ 738,00",
+        "R$ 492,00",
+        "R$ 553,50",
+        "R$ 615,00",
+        "R$ 676,50"
+      ]
+    },
+    {
+      "id": "treino-1med-011",
+      "grupo": "compostos",
+      "assunto": "Rendimento composto",
+      "enunciado": "Uma pequena editora fez um único depósito de R$ 2.500,00, que rendeu juros compostos de 20% ao ano durante 3 anos, sem movimentações. Ao final, retirou o capital inicial e manteve apenas os juros na conta. Quanto permaneceu?",
+      "resposta": "C",
+      "comentario": "M = C × (1 + i)ᵗ = 2500 × (1,2)^3 = R$ 4.320,00.\n\nJ = M − C = R$ 4.320,00 − R$ 2.500,00 = R$ 1.820,00. Nos juros compostos, o saldo de cada ano incorpora os juros anteriores.\n\nResposta: R$ 1.820,00.",
+      "alternativas": [
+        "R$ 1.456,00",
+        "R$ 1.638,00",
+        "R$ 1.820,00",
+        "R$ 2.002,00",
+        "R$ 2.184,00"
+      ]
+    },
+    {
+      "id": "treino-1med-012",
+      "grupo": "compostos",
+      "assunto": "Rendimento composto",
+      "enunciado": "Uma escola de dança fez um único depósito de R$ 8.000,00, que rendeu juros compostos de 10% ao ano durante 2 anos, sem movimentações. Ao final, retirou o capital inicial e manteve apenas os juros na conta. Quanto permaneceu?",
+      "resposta": "B",
+      "comentario": "M = C × (1 + i)ᵗ = 8000 × (1,1)^2 = R$ 9.680,00.\n\nJ = M − C = R$ 9.680,00 − R$ 8.000,00 = R$ 1.680,00. Nos juros compostos, o saldo de cada ano incorpora os juros anteriores.\n\nResposta: R$ 1.680,00.",
+      "alternativas": [
+        "R$ 1.512,00",
+        "R$ 1.680,00",
+        "R$ 1.848,00",
+        "R$ 2.016,00",
+        "R$ 1.344,00"
+      ]
+    },
+    {
+      "id": "treino-1med-013",
+      "grupo": "comparacao",
+      "assunto": "Comparação de regimes",
+      "enunciado": "Um centro de esportes recebeu duas propostas para pagar um equipamento de R$ 12.000,00 em uma única parcela após dois anos. A proposta A cobra juros simples de 8% ao ano; a B, juros compostos à mesma taxa. Qual é a economia ao escolher A?",
+      "resposta": "A",
+      "comentario": "MA = 12000 × (1 + 0,08 × 2) = R$ 13.920,00.\n\nMB = 12000 × (1,08)² = R$ 13.996,80.\n\nEconomia = MB − MA = R$ 76,80. A diferença corresponde aos juros sobre os juros do segundo ano.\n\nResposta: R$ 76,80.",
+      "alternativas": [
+        "R$ 76,80",
+        "R$ 84,48",
+        "R$ 92,16",
+        "R$ 61,44",
+        "R$ 69,12"
+      ]
+    },
+    {
+      "id": "treino-1med-014",
+      "grupo": "comparacao",
+      "assunto": "Comparação de regimes",
+      "enunciado": "Uma marcenaria recebeu duas propostas para pagar um equipamento de R$ 9.000,00 em uma única parcela após dois anos. A proposta A cobra juros simples de 10% ao ano; a B, juros compostos à mesma taxa. Qual é a economia ao escolher A?",
+      "resposta": "E",
+      "comentario": "MA = 9000 × (1 + 0,1 × 2) = R$ 10.800,00.\n\nMB = 9000 × (1,1)² = R$ 10.890,00.\n\nEconomia = MB − MA = R$ 90,00. A diferença corresponde aos juros sobre os juros do segundo ano.\n\nResposta: R$ 90,00.",
+      "alternativas": [
+        "R$ 99,00",
+        "R$ 108,00",
+        "R$ 72,00",
+        "R$ 81,00",
+        "R$ 90,00"
+      ]
+    },
+    {
+      "id": "treino-1med-015",
+      "grupo": "comparacao",
+      "assunto": "Comparação de regimes",
+      "enunciado": "Uma associação de músicos recebeu duas propostas para pagar um equipamento de R$ 15.000,00 em uma única parcela após dois anos. A proposta A cobra juros simples de 6% ao ano; a B, juros compostos à mesma taxa. Qual é a economia ao escolher A?",
+      "resposta": "D",
+      "comentario": "MA = 15000 × (1 + 0,06 × 2) = R$ 16.800,00.\n\nMB = 15000 × (1,06)² = R$ 16.854,00.\n\nEconomia = MB − MA = R$ 54,00. A diferença corresponde aos juros sobre os juros do segundo ano.\n\nResposta: R$ 54,00.",
+      "alternativas": [
+        "R$ 64,80",
+        "R$ 43,20",
+        "R$ 48,60",
+        "R$ 54,00",
+        "R$ 59,40"
+      ]
+    },
+    {
+      "id": "treino-1med-016",
+      "grupo": "comparacao",
+      "assunto": "Comparação de regimes",
+      "enunciado": "Uma cozinha comunitária recebeu duas propostas para pagar um equipamento de R$ 20.000,00 em uma única parcela após dois anos. A proposta A cobra juros simples de 5% ao ano; a B, juros compostos à mesma taxa. Qual é a economia ao escolher A?",
+      "resposta": "C",
+      "comentario": "MA = 20000 × (1 + 0,05 × 2) = R$ 22.000,00.\n\nMB = 20000 × (1,05)² = R$ 22.050,00.\n\nEconomia = MB − MA = R$ 50,00. A diferença corresponde aos juros sobre os juros do segundo ano.\n\nResposta: R$ 50,00.",
+      "alternativas": [
+        "R$ 40,00",
+        "R$ 45,00",
+        "R$ 50,00",
+        "R$ 55,00",
+        "R$ 60,00"
+      ]
+    },
+    {
+      "id": "treino-1med-017",
+      "grupo": "desconto",
+      "assunto": "Montante e abatimento",
+      "enunciado": "Um parque de ciências comprou equipamentos por R$ 24.000,00, com pagamento único ao final de 3 anos e juros simples de 8% ao ano. O fornecedor permite quitar no fim do primeiro ano com desconto de 10% sobre o montante originalmente previsto para o fim do contrato. Qual será o pagamento com esse abatimento?",
+      "resposta": "B",
+      "comentario": "Primeiro calculamos o montante do contrato inteiro: M = 24000 × (1 + 0,08 × 3) = R$ 29.760,00.\n\nO abatimento incide sobre esse montante: V = 29760 × (1 − 0,1) = R$ 26.784,00. O prazo de um ano informa quando ocorre a quitação; a base do desconto é o montante final previsto no enunciado.\n\nResposta: R$ 26.784,00.",
+      "alternativas": [
+        "R$ 24.105,60",
+        "R$ 26.784,00",
+        "R$ 29.462,40",
+        "R$ 32.140,80",
+        "R$ 21.427,20"
+      ]
+    },
+    {
+      "id": "treino-1med-018",
+      "grupo": "desconto",
+      "assunto": "Montante e abatimento",
+      "enunciado": "Uma empresa de reciclagem comprou equipamentos por R$ 18.000,00, com pagamento único ao final de 2 anos e juros simples de 10% ao ano. O fornecedor permite quitar no fim do primeiro ano com desconto de 5% sobre o montante originalmente previsto para o fim do contrato. Qual será o pagamento com esse abatimento?",
+      "resposta": "A",
+      "comentario": "Primeiro calculamos o montante do contrato inteiro: M = 18000 × (1 + 0,1 × 2) = R$ 21.600,00.\n\nO abatimento incide sobre esse montante: V = 21600 × (1 − 0,05) = R$ 20.520,00. O prazo de um ano informa quando ocorre a quitação; a base do desconto é o montante final previsto no enunciado.\n\nResposta: R$ 20.520,00.",
+      "alternativas": [
+        "R$ 20.520,00",
+        "R$ 22.572,00",
+        "R$ 24.624,00",
+        "R$ 16.416,00",
+        "R$ 18.468,00"
+      ]
+    },
+    {
+      "id": "treino-1med-019",
+      "grupo": "desconto",
+      "assunto": "Montante e abatimento",
+      "enunciado": "Uma associação de moradores comprou equipamentos por R$ 30.000,00, com pagamento único ao final de 4 anos e juros simples de 6% ao ano. O fornecedor permite quitar no fim do primeiro ano com desconto de 12% sobre o montante originalmente previsto para o fim do contrato. Qual será o pagamento com esse abatimento?",
+      "resposta": "E",
+      "comentario": "Primeiro calculamos o montante do contrato inteiro: M = 30000 × (1 + 0,06 × 4) = R$ 37.200,00.\n\nO abatimento incide sobre esse montante: V = 37200 × (1 − 0,12) = R$ 32.736,00. O prazo de um ano informa quando ocorre a quitação; a base do desconto é o montante final previsto no enunciado.\n\nResposta: R$ 32.736,00.",
+      "alternativas": [
+        "R$ 36.009,60",
+        "R$ 39.283,20",
+        "R$ 26.188,80",
+        "R$ 29.462,40",
+        "R$ 32.736,00"
+      ]
+    },
+    {
+      "id": "treino-1med-020",
+      "grupo": "desconto",
+      "assunto": "Montante e abatimento",
+      "enunciado": "Um grupo de audiovisual comprou equipamentos por R$ 16.000,00, com pagamento único ao final de 3 anos e juros simples de 12% ao ano. O fornecedor permite quitar no fim do primeiro ano com desconto de 15% sobre o montante originalmente previsto para o fim do contrato. Qual será o pagamento com esse abatimento?",
+      "resposta": "D",
+      "comentario": "Primeiro calculamos o montante do contrato inteiro: M = 16000 × (1 + 0,12 × 3) = R$ 21.760,00.\n\nO abatimento incide sobre esse montante: V = 21760 × (1 − 0,15) = R$ 18.496,00. O prazo de um ano informa quando ocorre a quitação; a base do desconto é o montante final previsto no enunciado.\n\nResposta: R$ 18.496,00.",
+      "alternativas": [
+        "R$ 22.195,20",
+        "R$ 14.796,80",
+        "R$ 16.646,40",
+        "R$ 18.496,00",
+        "R$ 20.345,60"
+      ]
+    }
+  ]
+}

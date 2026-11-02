@@ -111,3 +111,11 @@
 .pdf-review-download-actions{display:flex;flex-wrap:wrap;gap:1rem;margin:1rem 0}
 .pdf-review-download-actions a{text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
 .pdf-review-solution p{white-space:pre-line}
+
+/* Treinos por série: controles confortáveis em telas pequenas. */
+#review-training-count { display:block; margin-top:8px; min-height:44px; padding:10px 14px; border:1px solid #94a3b8; border-radius:10px; font:inherit; color:#14213d; background:#fff; max-width:100%; }
+#review-training-panel label { font-weight:600; }
+#review-training-panel .pdf-review-download-actions { align-items:end; }
+[data-review-series][aria-current="page"] { outline:3px solid #35d2df; outline-offset:3px; }
+#review-generate:disabled { opacity:.55; cursor:wait; }
+.pdf-review-choice math { font-size:1.2em; margin-left:4px; }

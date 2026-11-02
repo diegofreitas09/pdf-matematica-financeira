@@ -1,0 +1,310 @@
+{
+  "serie": 2,
+  "questoes": [
+    {
+      "id": "treino-2med-001",
+      "grupo": "log",
+      "assunto": "Juros compostos e logaritmos",
+      "enunciado": "Um observatório quer ampliar seu acervo. Para isso, precisa elevar um fundo de R$ 20.000,00 para R$ 40.000,00, sem novos depósitos. O saldo rende juros compostos de 5% ao ano. O tempo necessário, em anos, é mais próximo de qual valor? Use log(2) = 0,301 e log(1,05) = 0,021, na mesma base.",
+      "resposta": "C",
+      "comentario": "M/C = (1,05)ᵗ = 2.\n\nt = log(2)/log(1,05) = 0,301/0,021 ≈ 14.33 anos. Escolhemos a alternativa mais próxima, 14 anos.\n\nResposta: 14 anos.",
+      "alternativas": [
+        "10 anos",
+        "12 anos",
+        "14 anos",
+        "16 anos",
+        "18 anos"
+      ]
+    },
+    {
+      "id": "treino-2med-002",
+      "grupo": "log",
+      "assunto": "Juros compostos e logaritmos",
+      "enunciado": "Um centro cultural planeja restaurar um palco. Para isso, precisa elevar um fundo de R$ 30.000,00 para R$ 45.000,00, sem novos depósitos. O saldo rende juros compostos de 8% ao ano. O tempo necessário, em anos, é mais próximo de qual valor? Use log(1,5) = 0,176 e log(1,08) = 0,033, na mesma base.",
+      "resposta": "B",
+      "comentario": "M/C = (1,08)ᵗ = 1,5.\n\nt = log(1,5)/log(1,08) = 0,176/0,033 ≈ 5.33 anos. Escolhemos a alternativa mais próxima, 5 anos.\n\nResposta: 5 anos.",
+      "alternativas": [
+        "3 anos",
+        "5 anos",
+        "7 anos",
+        "9 anos",
+        "1 anos"
+      ]
+    },
+    {
+      "id": "treino-2med-003",
+      "grupo": "log",
+      "assunto": "Juros compostos e logaritmos",
+      "enunciado": "Uma cooperativa deseja aumentar sua reserva. Para isso, precisa elevar um fundo de R$ 12.000,00 para R$ 36.000,00, sem novos depósitos. O saldo rende juros compostos de 10% ao ano. O tempo necessário, em anos, é mais próximo de qual valor? Use log(3) = 0,477 e log(1,1) = 0,041, na mesma base.",
+      "resposta": "A",
+      "comentario": "M/C = (1,1)ᵗ = 3.\n\nt = log(3)/log(1,1) = 0,477/0,041 ≈ 11.63 anos. Escolhemos a alternativa mais próxima, 12 anos.\n\nResposta: 12 anos.",
+      "alternativas": [
+        "12 anos",
+        "14 anos",
+        "16 anos",
+        "8 anos",
+        "10 anos"
+      ]
+    },
+    {
+      "id": "treino-2med-004",
+      "grupo": "log",
+      "assunto": "Juros compostos e logaritmos",
+      "enunciado": "Um arquivo histórico pretende digitalizar fotografias. Para isso, precisa elevar um fundo de R$ 16.000,00 para R$ 32.000,00, sem novos depósitos. O saldo rende juros compostos de 6% ao ano. O tempo necessário, em anos, é mais próximo de qual valor? Use log(2) = 0,301 e log(1,06) = 0,025, na mesma base.",
+      "resposta": "E",
+      "comentario": "M/C = (1,06)ᵗ = 2.\n\nt = log(2)/log(1,06) = 0,301/0,025 ≈ 12.04 anos. Escolhemos a alternativa mais próxima, 12 anos.\n\nResposta: 12 anos.",
+      "alternativas": [
+        "14 anos",
+        "16 anos",
+        "8 anos",
+        "10 anos",
+        "12 anos"
+      ]
+    },
+    {
+      "id": "treino-2med-005",
+      "grupo": "log",
+      "assunto": "Juros compostos e logaritmos",
+      "enunciado": "Um centro de pesquisa prepara uma nova exposição. Para isso, precisa elevar um fundo de R$ 40.000,00 para R$ 60.000,00, sem novos depósitos. O saldo rende juros compostos de 4% ao ano. O tempo necessário, em anos, é mais próximo de qual valor? Use log(1,5) = 0,176 e log(1,04) = 0,017, na mesma base.",
+      "resposta": "D",
+      "comentario": "M/C = (1,04)ᵗ = 1,5.\n\nt = log(1,5)/log(1,04) = 0,176/0,017 ≈ 10.35 anos. Escolhemos a alternativa mais próxima, 10 anos.\n\nResposta: 10 anos.",
+      "alternativas": [
+        "14 anos",
+        "6 anos",
+        "8 anos",
+        "10 anos",
+        "12 anos"
+      ]
+    },
+    {
+      "id": "treino-2med-006",
+      "grupo": "capital",
+      "assunto": "Capital inicial",
+      "enunciado": "Uma oficina de cerâmica adquiriu um novo forno com pagamento único após 2 anos, sem entrada. O preço à vista foi financiado a juros compostos de 5% ao ano. Se o pagamento final foi de R$ 19.845,00, sem outras taxas, qual era o preço à vista?",
+      "resposta": "R$ 18.000,00",
+      "comentario": "M = C × (1 + i)ᵗ. Isolando: C = M/(1 + i)ᵗ.\n\nC = 19845/(1,05)^2 = R$ 18.000,00. Dividir pelo fator acumulado desfaz a capitalização composta."
+    },
+    {
+      "id": "treino-2med-007",
+      "grupo": "capital",
+      "assunto": "Capital inicial",
+      "enunciado": "Um coletivo de cinema comprou iluminação com pagamento único após 3 anos, sem entrada. O preço à vista foi financiado a juros compostos de 10% ao ano. Se o pagamento final foi de R$ 16.637,50, sem outras taxas, qual era o preço à vista?",
+      "resposta": "R$ 12.500,00",
+      "comentario": "M = C × (1 + i)ᵗ. Isolando: C = M/(1 + i)ᵗ.\n\nC = 16637,5/(1,1)^3 = R$ 12.500,00. Dividir pelo fator acumulado desfaz a capitalização composta."
+    },
+    {
+      "id": "treino-2med-008",
+      "grupo": "capital",
+      "assunto": "Capital inicial",
+      "enunciado": "Uma escola de música adquiriu instrumentos com pagamento único após 2 anos, sem entrada. O preço à vista foi financiado a juros compostos de 8% ao ano. Se o pagamento final foi de R$ 27.993,60, sem outras taxas, qual era o preço à vista?",
+      "resposta": "R$ 24.000,00",
+      "comentario": "M = C × (1 + i)ᵗ. Isolando: C = M/(1 + i)ᵗ.\n\nC = 27993,6/(1,08)^2 = R$ 24.000,00. Dividir pelo fator acumulado desfaz a capitalização composta."
+    },
+    {
+      "id": "treino-2med-009",
+      "grupo": "capital",
+      "assunto": "Capital inicial",
+      "enunciado": "Uma empresa de tecnologia comprou impressoras com pagamento único após 2 anos, sem entrada. O preço à vista foi financiado a juros compostos de 20% ao ano. Se o pagamento final foi de R$ 23.040,00, sem outras taxas, qual era o preço à vista?",
+      "resposta": "R$ 16.000,00",
+      "comentario": "M = C × (1 + i)ᵗ. Isolando: C = M/(1 + i)ᵗ.\n\nC = 23040/(1,2)^2 = R$ 16.000,00. Dividir pelo fator acumulado desfaz a capitalização composta."
+    },
+    {
+      "id": "treino-2med-010",
+      "grupo": "capital",
+      "assunto": "Capital inicial",
+      "enunciado": "Uma associação esportiva adquiriu equipamentos com pagamento único após 2 anos, sem entrada. O preço à vista foi financiado a juros compostos de 6% ao ano. Se o pagamento final foi de R$ 33.708,00, sem outras taxas, qual era o preço à vista?",
+      "resposta": "R$ 30.000,00",
+      "comentario": "M = C × (1 + i)ᵗ. Isolando: C = M/(1 + i)ᵗ.\n\nC = 33708/(1,06)^2 = R$ 30.000,00. Dividir pelo fator acumulado desfaz a capitalização composta."
+    },
+    {
+      "id": "treino-2med-011",
+      "grupo": "sucessivas",
+      "assunto": "Aplicações sucessivas",
+      "enunciado": "Uma campanha de adoção de animais arrecadou R$ 5.000,00. O dinheiro rendeu juros simples de 2% ao mês durante 10 meses. Todo o montante foi então reaplicado a juros simples de 4% ao trimestre por 18 meses. Sem depósitos ou retiradas, qual foi o saldo final?",
+      "resposta": "C",
+      "comentario": "Primeira etapa: M₁ = 5000 × (1 + 0,02 × 10) = R$ 6.000,00.\n\nSegunda etapa: 18 meses = 6 trimestres. M₂ = 6000 × (1 + 0,04 × 6) = R$ 7.440,00. O capital da segunda etapa é o montante integral da primeira.\n\nResposta: R$ 7.440,00.",
+      "alternativas": [
+        "R$ 5.952,00",
+        "R$ 6.696,00",
+        "R$ 7.440,00",
+        "R$ 8.184,00",
+        "R$ 8.928,00"
+      ]
+    },
+    {
+      "id": "treino-2med-012",
+      "grupo": "sucessivas",
+      "assunto": "Aplicações sucessivas",
+      "enunciado": "Um festival de cinema estudantil arrecadou R$ 8.000,00. O dinheiro rendeu juros simples de 1,5% ao mês durante 12 meses. Todo o montante foi então reaplicado a juros simples de 6% ao trimestre por 24 meses. Sem depósitos ou retiradas, qual foi o saldo final?",
+      "resposta": "B",
+      "comentario": "Primeira etapa: M₁ = 8000 × (1 + 0,015 × 12) = R$ 9.440,00.\n\nSegunda etapa: 24 meses = 8 trimestres. M₂ = 9440 × (1 + 0,06 × 8) = R$ 13.971,20. O capital da segunda etapa é o montante integral da primeira.\n\nResposta: R$ 13.971,20.",
+      "alternativas": [
+        "R$ 12.574,08",
+        "R$ 13.971,20",
+        "R$ 15.368,32",
+        "R$ 16.765,44",
+        "R$ 11.176,96"
+      ]
+    },
+    {
+      "id": "treino-2med-013",
+      "grupo": "sucessivas",
+      "assunto": "Aplicações sucessivas",
+      "enunciado": "Um projeto de recuperação de praças arrecadou R$ 6.000,00. O dinheiro rendeu juros simples de 2,5% ao mês durante 8 meses. Todo o montante foi então reaplicado a juros simples de 5% ao trimestre por 27 meses. Sem depósitos ou retiradas, qual foi o saldo final?",
+      "resposta": "A",
+      "comentario": "Primeira etapa: M₁ = 6000 × (1 + 0,025 × 8) = R$ 7.200,00.\n\nSegunda etapa: 27 meses = 9 trimestres. M₂ = 7200 × (1 + 0,05 × 9) = R$ 10.440,00. O capital da segunda etapa é o montante integral da primeira.\n\nResposta: R$ 10.440,00.",
+      "alternativas": [
+        "R$ 10.440,00",
+        "R$ 11.484,00",
+        "R$ 12.528,00",
+        "R$ 8.352,00",
+        "R$ 9.396,00"
+      ]
+    },
+    {
+      "id": "treino-2med-014",
+      "grupo": "sucessivas",
+      "assunto": "Aplicações sucessivas",
+      "enunciado": "Uma campanha de compra de livros arrecadou R$ 4.500,00. O dinheiro rendeu juros simples de 2% ao mês durante 15 meses. Todo o montante foi então reaplicado a juros simples de 3% ao trimestre por 30 meses. Sem depósitos ou retiradas, qual foi o saldo final?",
+      "resposta": "E",
+      "comentario": "Primeira etapa: M₁ = 4500 × (1 + 0,02 × 15) = R$ 5.850,00.\n\nSegunda etapa: 30 meses = 10 trimestres. M₂ = 5850 × (1 + 0,03 × 10) = R$ 7.605,00. O capital da segunda etapa é o montante integral da primeira.\n\nResposta: R$ 7.605,00.",
+      "alternativas": [
+        "R$ 8.365,50",
+        "R$ 9.126,00",
+        "R$ 6.084,00",
+        "R$ 6.844,50",
+        "R$ 7.605,00"
+      ]
+    },
+    {
+      "id": "treino-2med-015",
+      "grupo": "sucessivas",
+      "assunto": "Aplicações sucessivas",
+      "enunciado": "Um torneio de robótica arrecadou R$ 10.000,00. O dinheiro rendeu juros simples de 1% ao mês durante 18 meses. Todo o montante foi então reaplicado a juros simples de 4% ao trimestre por 15 meses. Sem depósitos ou retiradas, qual foi o saldo final?",
+      "resposta": "D",
+      "comentario": "Primeira etapa: M₁ = 10000 × (1 + 0,01 × 18) = R$ 11.800,00.\n\nSegunda etapa: 15 meses = 5 trimestres. M₂ = 11800 × (1 + 0,04 × 5) = R$ 14.160,00. O capital da segunda etapa é o montante integral da primeira.\n\nResposta: R$ 14.160,00.",
+      "alternativas": [
+        "R$ 16.992,00",
+        "R$ 11.328,00",
+        "R$ 12.744,00",
+        "R$ 14.160,00",
+        "R$ 15.576,00"
+      ]
+    },
+    {
+      "id": "treino-2med-016",
+      "grupo": "somatorio",
+      "assunto": "Comparação de propostas — somatório",
+      "enunciado": "Uma floricultura precisa de uma câmara refrigerada, com preço à vista de R$ 15.000,00. Três fornecedores permitem pagamento único após 4 meses, sem entrada. A cobra juros simples de 18% ao ano; B cobra juros simples de 0,04% ao dia; C fixa o pagamento em R$ 15.600,00. Considere meses de 30 dias. Some os códigos das afirmações verdadeiras.\n\n01. Os juros da proposta A serão de R$ 900,00.\n02. A proposta B exigirá pagamento menor do que a proposta A.\n04. A proposta C terá o menor pagamento entre as três.\n08. A taxa de juros simples da proposta C equivale a 6% ao semestre.",
+      "resposta": "Soma 15",
+      "comentario": "A: J = 15000 × 0,18 × (4/12) = R$ 900,00; M = R$ 15.900,00.\n\nB: prazo de 120 dias. J = 15000 × 0,0004 × 120 = R$ 720,00; M = R$ 15.720,00.\n\nC: J = R$ 600,00. Taxa mensal = J/(C × 4) = 1%. Taxa semestral proporcional = 6%.\n\n01: verdadeira.\n02: verdadeira.\n04: verdadeira.\n08: verdadeira.\n\nSoma das verdadeiras: 15."
+    },
+    {
+      "id": "treino-2med-017",
+      "grupo": "somatorio",
+      "assunto": "Comparação de propostas — somatório",
+      "enunciado": "Uma padaria precisa de uma batedeira industrial, com preço à vista de R$ 20.000,00. Três fornecedores permitem pagamento único após 3 meses, sem entrada. A cobra juros simples de 24% ao ano; B cobra juros simples de 0,05% ao dia; C fixa o pagamento em R$ 20.900,00. Considere meses de 30 dias. Some os códigos das afirmações verdadeiras.\n\n01. Os juros da proposta A serão de R$ 1.200,00.\n02. A proposta B exigirá pagamento menor do que a proposta A.\n04. A proposta C terá o menor pagamento entre as três.\n08. A taxa de juros simples da proposta C equivale a 10% ao semestre.",
+      "resposta": "Soma 03",
+      "comentario": "A: J = 20000 × 0,24 × (3/12) = R$ 1.200,00; M = R$ 21.200,00.\n\nB: prazo de 90 dias. J = 20000 × 0,0005 × 90 = R$ 900,00; M = R$ 20.900,00.\n\nC: J = R$ 900,00. Taxa mensal = J/(C × 3) = 1,5%. Taxa semestral proporcional = 9%.\n\n01: verdadeira.\n02: verdadeira.\n04: falsa; C empata com B em R$ 20.900,00, portanto não apresenta pagamento estritamente menor.\n08: falsa; a taxa semestral é 9%, e não 10%.\n\nSoma das verdadeiras: 03."
+    },
+    {
+      "id": "treino-2med-018",
+      "grupo": "somatorio",
+      "assunto": "Comparação de propostas — somatório",
+      "enunciado": "Um ateliê precisa de uma máquina de corte, com preço à vista de R$ 10.000,00. Três fornecedores permitem pagamento único após 6 meses, sem entrada. A cobra juros simples de 12% ao ano; B cobra juros simples de 0,03% ao dia; C fixa o pagamento em R$ 10.480,00. Considere meses de 30 dias. Some os códigos das afirmações verdadeiras.\n\n01. Os juros da proposta A serão de R$ 600,00.\n02. A proposta B exigirá pagamento menor do que a proposta A.\n04. A proposta C terá o menor pagamento entre as três.\n08. A taxa de juros simples da proposta C equivale a 4,8% ao semestre.",
+      "resposta": "Soma 15",
+      "comentario": "A: J = 10000 × 0,12 × (6/12) = R$ 600,00; M = R$ 10.600,00.\n\nB: prazo de 180 dias. J = 10000 × 0,0003 × 180 = R$ 540,00; M = R$ 10.540,00.\n\nC: J = R$ 480,00. Taxa mensal = J/(C × 6) = 0,8%. Taxa semestral proporcional = 4,8%.\n\n01: verdadeira.\n02: verdadeira.\n04: verdadeira.\n08: verdadeira.\n\nSoma das verdadeiras: 15."
+    },
+    {
+      "id": "treino-2med-019",
+      "grupo": "somatorio",
+      "assunto": "Comparação de propostas — somatório",
+      "enunciado": "Uma escola precisa de um projetor, com preço à vista de R$ 18.000,00. Três fornecedores permitem pagamento único após 5 meses, sem entrada. A cobra juros simples de 12% ao ano; B cobra juros simples de 0,04% ao dia; C fixa o pagamento em R$ 18.720,00. Considere meses de 30 dias. Some os códigos das afirmações verdadeiras.\n\n01. Os juros da proposta A serão de R$ 900,00.\n02. A proposta B exigirá pagamento menor do que a proposta A.\n04. A proposta C terá o menor pagamento entre as três.\n08. A taxa de juros simples da proposta C equivale a 5,8% ao semestre.",
+      "resposta": "Soma 05",
+      "comentario": "A: J = 18000 × 0,12 × (5/12) = R$ 900,00; M = R$ 18.900,00.\n\nB: prazo de 150 dias. J = 18000 × 0,0004 × 150 = R$ 1.080,00; M = R$ 19.080,00.\n\nC: J = R$ 720,00. Taxa mensal = J/(C × 5) = 0,8%. Taxa semestral proporcional = 4,8%.\n\n01: verdadeira.\n02: falsa.\n04: verdadeira.\n08: falsa.\n\nSoma das verdadeiras: 05."
+    },
+    {
+      "id": "treino-2med-020",
+      "grupo": "somatorio",
+      "assunto": "Comparação de propostas — somatório",
+      "enunciado": "Uma gráfica precisa de uma impressora, com preço à vista de R$ 24.000,00. Três fornecedores permitem pagamento único após 4 meses, sem entrada. A cobra juros simples de 15% ao ano; B cobra juros simples de 0,03% ao dia; C fixa o pagamento em R$ 24.720,00. Considere meses de 30 dias. Some os códigos das afirmações verdadeiras.\n\n01. Os juros da proposta A serão de R$ 1.200,00.\n02. A proposta B exigirá pagamento menor do que a proposta A.\n04. A proposta C terá o menor pagamento entre as três.\n08. A taxa de juros simples da proposta C equivale a 4,5% ao semestre.",
+      "resposta": "Soma 15",
+      "comentario": "A: J = 24000 × 0,15 × (4/12) = R$ 1.200,00; M = R$ 25.200,00.\n\nB: prazo de 120 dias. J = 24000 × 0,0003 × 120 = R$ 864,00; M = R$ 24.864,00.\n\nC: J = R$ 720,00. Taxa mensal = J/(C × 4) = 0,75%. Taxa semestral proporcional = 4,5%.\n\n01: verdadeira.\n02: verdadeira.\n04: verdadeira.\n08: verdadeira.\n\nSoma das verdadeiras: 15."
+    },
+    {
+      "id": "treino-2med-021",
+      "grupo": "funcao",
+      "assunto": "Porcentagem e função",
+      "enunciado": "Um curso de programação oferece bolsa parcial de 20% sobre o preço integral x reais, com x > 0. O aluno paga o restante, sem outras cobranças. Qual função representa o valor f(x) pago pelo aluno?",
+      "resposta": "C",
+      "comentario": "O aluno paga 100% − 20% = 80%.\n\nf(x) = 0,8x = 4x/5. A fração 4/5 representa a parte restante do preço.\n\nSubtrair 20 de x retiraria um valor fixo; multiplicar por 0,2 calcularia somente a parte coberta pelo benefício.",
+      "alternativas": [
+        "f(x) = x − 20",
+        "f(x) = 0,2x",
+        "f(x) = 4x/5",
+        "f(x) = 1,2x",
+        "f(x) = x + 20"
+      ]
+    },
+    {
+      "id": "treino-2med-022",
+      "grupo": "funcao",
+      "assunto": "Porcentagem e função",
+      "enunciado": "Uma oficina de desenho recebe incentivo cultural de 25% sobre o preço integral x reais, com x > 0. O aluno paga o restante, sem outras cobranças. Qual função representa o valor f(x) pago pelo aluno?",
+      "resposta": "B",
+      "comentario": "O aluno paga 100% − 25% = 75%.\n\nf(x) = 0,75x = 3x/4. A fração 3/4 representa a parte restante do preço.\n\nSubtrair 25 de x retiraria um valor fixo; multiplicar por 0,25 calcularia somente a parte coberta pelo benefício.",
+      "alternativas": [
+        "f(x) = 0,25x",
+        "f(x) = 3x/4",
+        "f(x) = 1,25x",
+        "f(x) = x + 25",
+        "f(x) = x − 25"
+      ]
+    },
+    {
+      "id": "treino-2med-023",
+      "grupo": "funcao",
+      "assunto": "Porcentagem e função",
+      "enunciado": "Um curso de primeiros socorros recebe um subsídio de 37,5% sobre o preço integral x reais, com x > 0. O aluno paga o restante, sem outras cobranças. Qual função representa o valor f(x) pago pelo aluno?",
+      "resposta": "A",
+      "comentario": "O aluno paga 100% − 37,5% = 62,5%.\n\nf(x) = 0,625x = 5x/8. A fração 5/8 representa a parte restante do preço.\n\nSubtrair 37,5 de x retiraria um valor fixo; multiplicar por 0,375 calcularia somente a parte coberta pelo benefício.",
+      "alternativas": [
+        "f(x) = 5x/8",
+        "f(x) = 1,375x",
+        "f(x) = x + 37,5",
+        "f(x) = x − 37,5",
+        "f(x) = 0,375x"
+      ]
+    },
+    {
+      "id": "treino-2med-024",
+      "grupo": "funcao",
+      "assunto": "Porcentagem e função",
+      "enunciado": "Uma escola de idiomas concede abatimento de 10% sobre o preço integral x reais, com x > 0. O aluno paga o restante, sem outras cobranças. Qual função representa o valor f(x) pago pelo aluno?",
+      "resposta": "E",
+      "comentario": "O aluno paga 100% − 10% = 90%.\n\nf(x) = 0,9x = 9x/10. A fração 9/10 representa a parte restante do preço.\n\nSubtrair 10 de x retiraria um valor fixo; multiplicar por 0,1 calcularia somente a parte coberta pelo benefício.",
+      "alternativas": [
+        "f(x) = 1,1x",
+        "f(x) = x + 10",
+        "f(x) = x − 10",
+        "f(x) = 0,1x",
+        "f(x) = 9x/10"
+      ]
+    },
+    {
+      "id": "treino-2med-025",
+      "grupo": "funcao",
+      "assunto": "Porcentagem e função",
+      "enunciado": "Um curso de astronomia oferece desconto social de 40% sobre o preço integral x reais, com x > 0. O aluno paga o restante, sem outras cobranças. Qual função representa o valor f(x) pago pelo aluno?",
+      "resposta": "D",
+      "comentario": "O aluno paga 100% − 40% = 60%.\n\nf(x) = 0,6x = 3x/5. A fração 3/5 representa a parte restante do preço.\n\nSubtrair 40 de x retiraria um valor fixo; multiplicar por 0,4 calcularia somente a parte coberta pelo benefício.",
+      "alternativas": [
+        "f(x) = x + 40",
+        "f(x) = x − 40",
+        "f(x) = 0,4x",
+        "f(x) = 3x/5",
+        "f(x) = 1,4x"
+      ]
+    }
+  ]
+}
